@@ -1,6 +1,7 @@
 <?php
 
 include_once __DIR__ . '\View\generales.php';
+include_once __DIR__ . '\Controller\MarcasController.php';
 
 ?>
 <!DOCTYPE html>
@@ -44,20 +45,11 @@ navbar();
 					<div class="short-popular-category-list text-center">
 						<h2>Categorias Populares</h2>
 						<ul class="list-inline">
-							<li class="list-inline-item">
-								<a href=""><i class="fa fa-car"></i> Toyota</a></li>
-							<li class="list-inline-item">
-								<a href=""><i class="fa fa-car"></i> Nissan</a>
-							</li>
-							<li class="list-inline-item">
-								<a href=""><i class="fa fa-car"></i> Suzuki</a>
-							</li>
-							<li class="list-inline-item">
-								<a href=""><i class="fa fa-car"></i> Mercedes</a>
-							</li>
-							<li class="list-inline-item">
-								<a href=""><i class="fa fa-car"></i> Audi</a>
-							</li>
+
+							<?php
+							ListarMarcas();
+							?>
+
 						</ul>
 					</div>
 					
@@ -70,11 +62,6 @@ navbar();
 	<!-- Container End -->
 </section>
 
-<!--===================================
-=            Client Slider            =
-====================================-->
-
-
 <!--===========================================
 =            Popular deals section            =
 ============================================-->
@@ -84,8 +71,8 @@ navbar();
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-title">
-					<h2>Autos mas vistos</h2>
-					<p>Estos son los 3 autos mas vistos por los usuarios en esta semana.</p>
+					<h2>Autos mas populares</h2>
+					<p>Estos son los autos mas populares</p>
 				</div>
 			</div>
 		</div>
@@ -226,131 +213,17 @@ navbar();
 				</div>
 				<div class="row">
 					<!-- Category list -->
-					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
-						<div class="category-block">
-							<div class="header">
-								<i class="fa fa-car icon-bg-1"></i> 
-								<h4>Toyota</h4>
-							</div>
-							<ul class="category-list" >
-								<li><a href="category.html">Sedan <span>93</span></a></li>
-								<li><a href="category.html">4x4 <span>233</span></a></li>
-								<li><a href="category.html">Suv <span>183</span></a></li>
-								<li><a href="category.html">pickup <span>343</span></a></li>
-							</ul>
-						</div>
-					</div> <!-- /Category List -->
-					<!-- Category list -->
-					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
-						<div class="category-block">
-							<div class="header">
-								<i class="fa fa-car icon-bg-2"></i> 
-								<h4>Nissan</h4>
-							</div>
-							<ul class="category-list" >
-								<li><a href="category.html">Sedan <span>93</span></a></li>
-								<li><a href="category.html">4x4 <span>233</span></a></li>
-								<li><a href="category.html">Suv <span>183</span></a></li>
-								<li><a href="category.html">pickup <span>343</span></a></li>
-							</ul>
-						</div>
-					</div> <!-- /Category List -->
-					<!-- Category list -->
-					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
-						<div class="category-block">
-							<div class="header">
-								<i class="fa fa-car icon-bg-3"></i> 
-								<h4>Suzuki</h4>
-							</div>
-							<ul class="category-list" >
-								<li><a href="category.html">Sedan <span>93</span></a></li>
-								<li><a href="category.html">4x4 <span>233</span></a></li>
-								<li><a href="category.html">Suv <span>183</span></a></li>
-								<li><a href="category.html">pickup <span>343</span></a></li>
-							</ul>
-						</div>
-					</div> <!-- /Category List -->
-					<!-- Category list -->
-					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
-						<div class="category-block">
-							<div class="header">
-								<i class="fa fa-car icon-bg-4"></i> 
-								<h4>Audi</h4>
-							</div>
-							<ul class="category-list" >
-								<li><a href="category.html">Sedan <span>93</span></a></li>
-								<li><a href="category.html">4x4 <span>233</span></a></li>
-								<li><a href="category.html">Suv <span>183</span></a></li>
-								<li><a href="category.html">pickup <span>343</span></a></li>
-							</ul>
-						</div>
-					</div> <!-- /Category List -->
-					<!-- Category list -->
-					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
-						<div class="category-block">
-							<div class="header">
-								<i class="fa fa-car icon-bg-5"></i> 
-								<h4>Jeep</h4>
-							</div>
-							<ul class="category-list" >
-								<li><a href="category.html">Sedan <span>93</span></a></li>
-								<li><a href="category.html">4x4 <span>233</span></a></li>
-								<li><a href="category.html">Suv <span>183</span></a></li>
-								<li><a href="category.html">pickup <span>343</span></a></li>
-							</ul>
-						</div>
-					</div> <!-- /Category List -->
-					<!-- Category list -->
-					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
-						<div class="category-block">
-							<div class="header">
-								<i class="fa fa-car icon-bg-6"></i> 
-								<h4>BMW</h4>
-							</div>
-							<ul class="category-list" >
-								<li><a href="category.html">Sedan <span>93</span></a></li>
-								<li><a href="category.html">4x4 <span>233</span></a></li>
-								<li><a href="category.html">Suv <span>183</span></a></li>
-								<li><a href="category.html">pickup <span>343</span></a></li>
-							</ul>
-						</div>
-					</div> <!-- /Category List -->
-					<!-- Category list -->
-					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
-						<div class="category-block">
-							<div class="header">
-								<i class="fa fa-car icon-bg-7"></i> 
-								<h4>wolksvagen</h4>
-							</div>
-							<ul class="category-list" >
-								<li><a href="category.html">Sedan <span>93</span></a></li>
-								<li><a href="category.html">4x4 <span>233</span></a></li>
-								<li><a href="category.html">Suv <span>183</span></a></li>
-								<li><a href="category.html">pickup <span>343</span></a></li>
-							</ul>
-						</div>
-					</div> <!-- /Category List -->
-					<!-- Category list -->
-					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
-						<div class="category-block">
-							<div class="header">
-								<i class="fa fa-car icon-bg-8"></i> 
-								<h4>chevrolet</h4>
-							</div>
-							<ul class="category-list" >
-								<li><a href="category.html">Sedan <span>93</span></a></li>
-								<li><a href="category.html">4x4 <span>233</span></a></li>
-								<li><a href="category.html">Suv <span>183</span></a></li>
-								<li><a href="category.html">pickup <span>343</span></a></li>
-							</ul>
-						</div>
-					</div> <!-- /Category List -->
-					
+					<?php
+
+					ListarMarcasEndPage();
+
+					?>
 					
 				</div>
 			</div>
 		</div>
 	</div>
+	
 	<!-- Container End -->
 </section>
 
