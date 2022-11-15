@@ -43,8 +43,8 @@ echo '<div class="container">
 <div class="row">
   <div class="col-md-12">
     <nav class="navbar navbar-expand-lg  navigation">
-      <a class="navbar-brand" href="index.html">
-        <img src="images/LOGO.png" width="100" height="100" alt="">
+      <a class="navbar-brand" href="index.php">
+        <img src="images/LOGO.png" width="140" height="80" alt="">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -69,7 +69,7 @@ echo '<div class="container">
               <a class="dropdown-item" href="dashboard.php">Dashboard</a>
               <a class="dropdown-item" href="user-profile.php">User Profile</a>
               <a class="dropdown-item" href="submit-coupon.php">Submit Coupon</a>
-              <a class="dropdown-item" href="blog.php">Blog</a>
+              <a class="dropdown-item" href="agregarVehiculo.php">agregar vehiculo</a>
               <a class="dropdown-item" href="single-blog.php">Single Post</a>
             </div>
           </li>
@@ -105,7 +105,7 @@ function footerInfo()
           <!-- About -->
           <div class="block about">
             <!-- footer logo -->
-            <img src="images/logoTransparente.png" width="80" height="80" alt="">
+            <img src="images/LOGO_blaco.png" width="140" height="80" alt="">
             <!-- description -->
             <p class="alt-color">En Todo Autos contamos 
               con una amplia varidad de modelos y rangos de precios para 
@@ -114,7 +114,7 @@ function footerInfo()
           </div>
         </div>
         <!-- Link list -->
-        <div class="col-lg-2 offset-lg-1 col-md-3">
+        <div class="col-md-4 offset-md-1 col-md-3">
           <div class="block">
             <h4>¿Donde estamos?</h4>
             <ul>
@@ -126,7 +126,7 @@ function footerInfo()
           </div>
         </div>
         <!-- Link list -->
-        <div class="col-lg-2 col-md-3 offset-md-1 offset-lg-0">
+        <div class="col-md-4 offset-md-1 offset-lg-0">
           <div class="block">
             <h4>Horarios</h4>
             <ul>
@@ -138,15 +138,6 @@ function footerInfo()
           </div>
         </div>
         <!-- Promotion -->
-        <div class="col-lg-4 col-md-7">
-          <!-- App promotion -->
-          <div class="block-2 app-promotion">
-            <a href="">
-              <!-- Icon -->
-              <img src="images/footer/phone-icon.png" alt="mobile-icon">
-            </a>
-            <p>Descargar la aplicación</p>
-          </div>
         </div>
       </div>
     </div>
@@ -159,27 +150,13 @@ function footerCopyright()
     echo ' <!-- Container Start -->
     <div class="container">
       <div class="row">
-        <div class="col-sm-6 col-12">
+        <div class="col-md-8 offset-md-2">
           <!-- Copyright -->
-          <div class="copyright">
+          <div class="copyright col-6 offset-3">
             <p>Copyright © 2016. Todos los derechos reservados.</p>
           </div>
         </div>
-        <div class="col-sm-6 col-12">
-          <!-- Social Icons -->
-          <ul class="social-media-icons text-right">
-              <li><a class="fa fa-facebook" href=""></a></li>
-              <li><a class="fa fa-twitter" href=""></a></li>
-              <li><a class="fa fa-pinterest-p" href=""></a></li>
-              <li><a class="fa fa-vimeo" href=""></a></li>
-            </ul>
-        </div>
       </div>
-    </div>
-    <!-- Container End -->
-    <!-- To Top -->
-    <div class="top-to">
-      <a id="top" class="" href=""><i class="fa fa-angle-up"></i></a>
     </div>';
 }
 
