@@ -43,18 +43,18 @@ navbar();
 						</div>
 						<!-- User Name -->
 						<h5 class="text-center">Samanta Doe</h5>
-						<p>Joined February 06, 2017</p>
-						<a href="user-profile.html" class="btn btn-main-sm">Edit Profile</a>
+						
+						<a href="user-profile.html" class="btn btn-main-sm">Editar Perfil</a>
 					</div>
 					<!-- Dashboard Links -->
 					<div class="widget user-dashboard-menu">
 						<ul>
-							<li class="active" ><a href=""><i class="fa fa-user"></i> My Ads</a></li>
-							<li><a href=""><i class="fa fa-bookmark-o"></i> Favourite Ads <span>5</span></a></li>
-							<li><a href=""><i class="fa fa-file-archive-o"></i>Archived Ads <span>12</span></a></li>
-							<li><a href=""><i class="fa fa-bolt"></i> Pending Approval<span>23</span></a></li>
-							<li><a href=""><i class="fa fa-cog"></i> Logout</a></li>
-							<li><a href=""><i class="fa fa-power-off"></i>Delete Account</a></li>
+							<li class="active" ><a href=""><i class="fa fa-user"></i> Mis Vehiculos</a></li>
+							<li><a href=""><i class="fa fa-bookmark-o"></i> Vehiculos Favoritos <span>5</span></a></li>
+							<li><a href=""><i class="fa fa-file-archive-o"></i>Vehiculos Guardados <span>12</span></a></li>
+							<li><a href=""><i class="fa fa-bolt"></i> Pendiente De Aprobacion<span>23</span></a></li>
+							<li><a href=""><i class="fa fa-cog"></i> Cerrar Sesion</a></li>
+							<li><a href=""><i class="fa fa-power-off"></i>Eliminar Perfil</a></li>
 						</ul>
 					</div>
 				</div>
@@ -62,14 +62,14 @@ navbar();
 			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
 				<!-- Recently Favorited -->
 				<div class="widget dashboard-container my-adslist">
-					<h3 class="widget-header">My Ads</h3>
+					<h3 class="widget-header">Mis Vehiculos</h3>
 					<table class="table table-responsive product-dashboard-table">
 						<thead>
 							<tr>
-								<th>Image</th>
-								<th>Product Title</th>
-								<th class="text-center">Category</th>
-								<th class="text-center">Action</th>
+								<th>Imagen</th>
+								<th>Titulo Del Vehiculo</th>
+								<th class="text-center">Categoria</th>
+								<th class="text-center">Accion</th>
 							</tr>
 						</thead>
 						<tbody>

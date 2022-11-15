@@ -137,9 +137,7 @@ include_once __DIR__ . '\View\generales.php';
 							</form>
 
 						</div>
-						<div class="card-footer text-muted">
-							user
-						</div>
+						
 					</div>
 				</div>
 			</div>
