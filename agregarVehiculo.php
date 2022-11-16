@@ -100,14 +100,20 @@ include_once __DIR__ . '\View\generales.php';
 										</select>
 									</div>
 									<div class="form-group col-md-6">
-										<label for="tipo">modelo</label>
-										<input type="text" class="form-control" placeholder="tipo">
+										<label for="modelo">modelo</label>
+										<select id="modelo" class="form-control">
+											<option selected>choose...</option>
+											<option>...</option>
+										</select>
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="form-group col-md-6">
 										<label for="tipo">tipo</label>
-										<input type="text" class="form-control" placeholder="tipo">
+										<select id="tipo" class="form-control">
+											<option selected>choose...</option>
+											<option>...</option>
+										</select>
 									</div>
 									<div class="form-group col-md-6">
 										<label for="color">color</label>
