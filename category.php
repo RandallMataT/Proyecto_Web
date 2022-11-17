@@ -1,5 +1,6 @@
 <?php
 include_once __DIR__ . '\View\generales.php';
+include_once __DIR__ . '\Controller\MarcasController.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,12 +55,11 @@ navbar();
             <div class="col-md-3">
                 <div class="category-sidebar">
                     <div class="widget category-list">
-    <h4 class="widget-header">Categorias</h4>
+    <h4 class="widget-header">Marcas</h4>
     <ul class="category-list">
-        <li><a href="category.html">Pickup<span>93</span></a></li>
-        <li><a href="category.html">Sedán <span>233</span></a></li>
-        <li><a href="category.html">SUV  <span>183</span></a></li>
-        <li><a href="category.html">4x4 <span>343</span></a></li>
+    <?php
+    ListarMarcasCategoria();
+    ?>
     </ul>
 </div>
 <div class="widget category-list">

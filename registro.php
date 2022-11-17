@@ -1,8 +1,10 @@
 <?php
 
 include_once __DIR__ . '\View\generales.php';
+include_once __DIR__ . '\Controller\UsuarioController.php';
 
 ?>
+
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
@@ -16,30 +18,33 @@ include_once __DIR__ . '\View\generales.php';
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="estilo.css" />
+    <link rel="stylesheet" href="css/estilos.css" />
   </head>
   <body>
     <div class="main">
       <div class="container a-container" id="a-container">
-        <form class="form" id="a-form" method="" action="">
+        <form class="form" id="a-form" method="post" action="">
           <h2 class="form_title title">Crear Cuenta</h2>
           <div class="form__icons"></div>
-          <span class="form__span">Utilize su correo electronico</span>
+          <span class="form__span">Utilice su correo electronico</span>
           <input class="form__input" type="text" placeholder="Nombre" />
+          <input class="form__input" type="text" placeholder="Apellido" />
           <input class="form__input" type="text" placeholder="Correo" />
           <input class="form__input" type="password" placeholder="Contraseña" />
-          <button class="form__button button submit">Inciar Sesión</button>
+          <button class="form__button button submit">Registrarse</button>
         </form>
       </div>
       <div class="container b-container" id="b-container">
-        <form class="form" id="b-form" method="" action="">
-          <h2 class="form_title title">TODOAUTOS</h2>
+        <form class="form" id="b-form" role="form" method="post" action="">
+          <h2 class="form_title title">Iniciar Sesion</h2>
           <div class="form__icons"></div>
           <span class="form__span">Utilize su correo electronico</span>
-          <input class="form__input" type="text" placeholder="Correo" />
-          <input class="form__input" type="password" placeholder="Contraseña" />
+          <input class="form__input" type="text" placeholder="Correo" id="txtCorreo" />
+          <input class="form__input" type="password" placeholder="Contraseña" id="txtContrasenna" />
+
           <a class="form__link">Olvidaste la contraseña?</a>
-          <button class="form__button button submit">Registrarse</button>
+          <input type="submit" id="btnIniciarSesion" value="iniciar sesion" class="form__button button">
+          
         </form>
       </div>
       <div class="switch" id="switch-cnt">
@@ -50,17 +55,17 @@ include_once __DIR__ . '\View\generales.php';
           <p class="switch__description description">
             Para mantenerte conectado con nosotros porfavor ingresa con tu informacion personal
           </p>
-          <button class="switch__button button switch-btn">Registrarse</button>
+          <button class="switch__button button switch-btn">Iniciar Sesion</button>
         </div>
         <div class="switch__container is-hidden" id="switch-c2">
           <h2 class="switch__title title">Hola Amigo !</h2>
           <p class="switch__description description">
             Ingresa tu informacion personal y disfruta de nuestros servicios
           </p>
-          <button class="switch__button button switch-btn">Inciar Sesión</button>
+          <button class="switch__button button switch-btn">Registrarse</button>
         </div>
       </div>
     </div>
-    <script src="confi.js"></script>
+    <script src="js/inicio.js"></script>
   </body>
 </html>

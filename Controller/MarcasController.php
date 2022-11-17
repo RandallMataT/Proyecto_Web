@@ -11,10 +11,26 @@ function ListarMarcas()
         while($fila = mysqli_fetch_array($datos))
         {
             echo '<li class="list-inline-item">';
-            echo '<a href=""><i class="fa fa-car"></i>' . $fila["Nombre"] . '</a>';
+            echo '<a href=""><i class="fa fa-car" id="Bus'.$fila["Nombre"].'"></i>' . $fila["Nombre"] . '</a>';
             echo '</li>';
         }
     }
+}
+
+
+function ListarMarcasCategoria()
+{
+
+    $datos = ListarMarcasModel();   
+
+    if($datos -> num_rows > 0)
+    {
+        while($fila = mysqli_fetch_array($datos))
+        {
+            echo '<li><a href="category.html">'. $fila["Nombre"] .'<span>'.random_int(40,120).'</span></a></li>';
+        }
+    }
+
 }
 
 function ListarMarcasEndPage()
@@ -43,6 +59,8 @@ function ListarMarcasEndPage()
     }
 
 }
+
+
 
 
 

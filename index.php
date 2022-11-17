@@ -1,5 +1,12 @@
 <?php
 
+if (session_status() == PHP_SESSION_NONE)
+{
+    session_start();
+}
+
+
+
 include_once __DIR__ . '\View\generales.php';
 include_once __DIR__ . '\Controller\MarcasController.php';
 include_once __DIR__ . '\Controller\VehiculosController.php';
