@@ -70,7 +70,7 @@ echo '<div class="container">
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="category.php">Marcas</a>
+            <a class="nav-link" href="category.php">Categorias</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto mt-10">
