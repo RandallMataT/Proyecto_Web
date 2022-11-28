@@ -1,5 +1,13 @@
 <?php
 
+if (session_status() == PHP_SESSION_NONE)
+    session_start();
+
+include_once __DIR__ . '\..\Controller\UsuarioController.php';
+include_once __DIR__ . '\..\Model\UsuarioModel.php';
+
+
+
 function headerGeneral()
 {
     echo '<!-- SITE TITTLE -->
@@ -9,23 +17,23 @@ function headerGeneral()
     <title>Todo Autos</title>
     
     <!-- PLUGINS CSS STYLE -->
-    <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+    <link href="../plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Owl Carousel -->
-    <link href="plugins/slick-carousel/slick/slick.css" rel="stylesheet">
-    <link href="plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
+    <link href="/../plugins/slick-carousel/slick/slick.css" rel="stylesheet">
+    <link href="/../plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
     <!-- Fancy Box -->
-    <link href="plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
-    <link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
-    <link href="plugins/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css" rel="stylesheet">
+    <link href="../plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
+    <link href="../plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="../plugins/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css" rel="stylesheet">
     <!-- CUSTOM CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
   
     <!-- FAVICON -->
-    <link href="img/favicon.png" rel="shortcut icon">
+    <link href="../img/favicon.png" rel="shortcut icon">
   
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesnt work if you view the page via file:// -->
@@ -38,24 +46,26 @@ function headerGeneral()
 
 function navbar()
 {
+  
+  include_once __DIR__ . '\..\Controller\UtilitarioController.php';
 
 echo '<div class="container">
 <div class="row">
   <div class="col-md-12">
     <nav class="navbar navbar-expand-lg  navigation">
-      <a class="navbar-brand" href="index.php">
-        <img src="images/LOGO.png" width="140" height="80" alt="">
+      <a class="navbar-brand" href="home.php">
+        <img src="../images/LOGO.png" width="140" height="80" alt="">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto main-nav ">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.php">Inicio</a>
+          <li class="nav-item">
+            <a class="nav-link" href="perfilUsuario.php?q='. $_SESSION["SesionId"] .'"><i class="fa fa-user"></i> Bienvenido '.$_SESSION["sesionNombre"].'</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="dashboard.php">Perfil Usuario</a>
+            <a class="nav-link" href="index.php">Inicio</a>
           </li>
           <li class="nav-item dropdown dropdown-slide">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -63,10 +73,10 @@ echo '<div class="container">
             </a>
             <!-- Dropdown list -->
             <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="single.php">Vehiculo Destacado</a>
-            <a class="dropdown-item" href="user-profile.php">Editar Usuario</a>
+            <a class="dropdown-item" href="vehiculo.php">Vehiculo Destacado</a>
+            <a class="dropdown-item" href="editarUsuario.php">Editar Usuario</a>
             <a class="dropdown-item" href="agregarVehiculo.php">Agregar Vehiculo</a>
-            <a class="dropdown-item" href="single-blog.php">Comentarios de la Pagina</a>
+            <a class="dropdown-item" href="comentarios.php">Comentarios de la Pagina</a>
             </div>
           </li>
           <li class="nav-item">
@@ -75,10 +85,9 @@ echo '<div class="container">
         </ul>
         <ul class="navbar-nav ml-auto mt-10">
           <li class="nav-item">
-            <a class="nav-link login-button" href="index.php">Iniciar Sesion</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link add-button" href="#"><i class="fa fa-plus-circle"></i> Agregar al Carrito</a>
+          <form action="" method="post">
+            <input class="btn btn-dark" type="submit" id="btnCerrar" name="btnCerrar" value="Cerrar Sesion"></input>
+            </form>
           </li>
         </ul>
       </div>
@@ -101,7 +110,7 @@ function footerInfo()
           <!-- About -->
           <div class="block about">
             <!-- footer logo -->
-            <img src="images/LOGO_blaco.png" width="140" height="80" alt="">
+            <img src="../images/LOGO_blaco.png" width="140" height="80" alt="">
             <!-- description -->
             <p class="alt-color">En Todo Autos contamos 
               con una amplia varidad de modelos y rangos de precios para 

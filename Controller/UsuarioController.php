@@ -1,13 +1,10 @@
 <?php
 
-
-
 if (session_status() == PHP_SESSION_NONE)
-{
     session_start();
-}
 
 include_once __DIR__ . '\..\Model\UsuarioModel.php';
+include_once __DIR__ . '\UtilitarioController.php';
 
 if(isset($_POST["btnIniciarSesion"]))
 {
@@ -18,16 +15,26 @@ if(isset($_POST["btnIniciarSesion"]))
         
     if($datos -> num_rows > 0)
     {
-        $datosUsuario = mysqli_fetch_array($datos);
+         $datosUsuario = mysqli_fetch_array($datos);
         $_SESSION["sesionNombre"] = $datosUsuario["nombre"];
-        $_SESSION["sesionTipoUsuario"] = $datosUsuario["tipoUsuario"];
-        header("Location: index.php");
+        $_SESSION["sesionRoles"] = $datosUsuario["Roles"];
+        $_SESSION["SesionId"] = $datosUsuario["Id"];
+        header("Location: \Proyecto_Web\View\home.php");
+        
+    
     }
     else
     {
-        header("Location: registro.php");
+        header("Location: ..\index.php");
     }
 }
+
+function ConsultarDatosUsuario($Id)
+{
+    $datos = ConsultarDatosUsuarioModel($Id);   
+    return mysqli_fetch_array($datos);
+}
+
 
 
 ?>

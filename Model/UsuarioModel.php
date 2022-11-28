@@ -16,4 +16,17 @@ function InicioSesionModel($correo, $contrasenna)
 
 }
 
+function ConsultarDatosUsuarioModel($Id)
+{
+    $enlace = OpenDB();
+
+    $procedimiento = "call ConsultarUsuarioId($Id);";
+    $datos = $enlace -> query($procedimiento);
+
+    CloseDB($enlace);
+    return $datos;
+}
+
+
+
 ?>

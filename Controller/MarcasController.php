@@ -11,7 +11,7 @@ function ListarMarcas()
         while($fila = mysqli_fetch_array($datos))
         {
             echo '<li class="list-inline-item">';
-            echo '<a href=""><i class="fa fa-car" id="Bus'.$fila["Nombre"].'"></i>' . $fila["Nombre"] . '</a>';
+            echo '<a href=""><i class="fa fa-car" id="Bus'.$fila["marca_vehiculo"].'"></i>' . $fila["marca_vehiculo"] . '</a>';
             echo '</li>';
         }
     }
@@ -27,7 +27,7 @@ function ListarMarcasCategoria()
     {
         while($fila = mysqli_fetch_array($datos))
         {
-            echo '<li><a href="category.html">'. $fila["Nombre"] .'<span>'.random_int(40,120).'</span></a></li>';
+            echo '<li><a href="category.html">'. $fila["marca_vehiculo"] .'<span>'.random_int(40,120).'</span></a></li>';
         }
     }
 
@@ -45,7 +45,7 @@ function ListarMarcasEndPage()
 						<div class="category-block">
 							<div class="header">
 								<i class="fa fa-car icon-bg-'.random_int(1,9).'"></i> 
-								<h4>'. $fila["Nombre"] . '</h4>
+								<h4>'. $fila["marca_vehiculo"] . '</h4>
 							</div>
 							<ul class="category-list" >
 								<li><a href="category.html">Sedan <span>93</span></a></li>

@@ -1,6 +1,15 @@
 <?php
 
-include_once __DIR__ . '\View\generales.php';
+if (session_status() == PHP_SESSION_NONE)
+{
+    session_start();
+}
+
+
+include_once __DIR__ . '\generales.php';
+include_once __DIR__ . '\..\Controller\UsuarioController.php';
+
+$datos = ConsultarDatosUsuario($_GET["q"]);
 
 ?>
 
@@ -13,7 +22,6 @@ include_once __DIR__ . '\View\generales.php';
 headerGeneral();
 
 ?>
-
 
 </head>
 
@@ -40,32 +48,23 @@ navbar();
 					<div class="widget user-dashboard-profile">
 						<!-- User Image -->
 						<div class="profile-thumb">
-							<img src="images/user/user-thumb.jpg" alt="" class="rounded-circle">
+							<img src="../images/user/user-thumb.jpg" alt="" class="rounded-circle">
 						</div>
 						<!-- User Name -->
-						<h5 class="text-center">Samanta Doe</h5>
-						<p>Joined February 06, 2017</p>
-						<a href="user-profile.html" class="btn btn-main-sm">Edit Profile</a>
+						<label for="">Nombre</label>
+						<h5 class="text-center"> <?php echo $datos["nombre"] .' '.  $datos["apellido"] ; ?> </h5>
+						<label for="">Correo</label>
+						<h5 class="text-center"> <?php echo $datos["correo"]; ?> </h5>
+						<label for="">Telefono</label>
+						<h5 class="text-center"> <?php echo $datos["telefono"]; ?> </h5>
+						
+						<a href="user-profile.html" class="btn btn-main-sm">Editar Perfil</a>
 					</div>
 					<!-- Dashboard Links -->
 					<div class="widget user-dashboard-menu">
 						<ul>
-							<li><a href="dashboard-my-ads.html"><i class="fa fa-user"></i> My Ads</a></li>
-							<li>
-								<a href="dashboard-favourite-ads.html"><i class="fa fa-bookmark-o"></i> Favourite Ads <span>5</span></a>
-							</li>
-							<li class="active" >
-								<a href="dashboard-archived-ads.html"><i class="fa fa-file-archive-o"></i>Archeved Ads <span>12</span></a>
-							</li>
-							<li>
-								<a href="dashboard-pending-ads.html"><i class="fa fa-bolt"></i> Pending Approval<span>23</span></a>
-							</li>
-							<li>
-								<a href="logout.html"><i class="fa fa-cog"></i> Logout</a>
-							</li>
-							<li>
-								<a href="delete-account.html"><i class="fa fa-power-off"></i>Delete Account</a>
-							</li>
+							<li class="active" ><a href=""><i class="fa fa-user"></i> Mis Vehiculos</a></li>
+							<li><a href=""><i class="fa fa-cog"></i> Cerrar Sesion</a></li>
 						</ul>
 					</div>
 				</div>
@@ -73,21 +72,21 @@ navbar();
 			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
 				<!-- Recently Favorited -->
 				<div class="widget dashboard-container my-adslist">
-					<h3 class="widget-header">My Ads</h3>
+					<h3 class="widget-header">Mis Vehiculos</h3>
 					<table class="table table-responsive product-dashboard-table">
 						<thead>
 							<tr>
-								<th>Image</th>
-								<th>Product Title</th>
-								<th class="text-center">Category</th>
-								<th class="text-center">Action</th>
+								<th>Imagen</th>
+								<th>Titulo Del Vehiculo</th>
+								<th class="text-center">Categoria</th>
+								<th class="text-center">Accion</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								
 								<td class="product-thumb">
-									<img width="80px" height="auto" src="images/products/products-1.jpg" alt="image description"></td>
+									<img width="80px" height="auto" src="../images/products/products-1.jpg" alt="image description"></td>
 								<td class="product-details">
 									<h3 class="title">Macbook Pro 15inch</h3>
 									<span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
@@ -100,8 +99,13 @@ navbar();
 									<div class="">
 										<ul class="list-inline justify-content-center">
 											<li class="list-inline-item">
+												<a data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="view" href="">
+													<i class="fa fa-eye"></i>
+												</a>		
+											</li>
+											<li class="list-inline-item">
 												<a class="edit" href="">
-													<i class="fa fa-clipboard"></i>
+													<i class="fa fa-pencil"></i>
 												</a>		
 											</li>
 											<li class="list-inline-item">
@@ -116,7 +120,7 @@ navbar();
 							<tr>
 								
 								<td class="product-thumb">
-									<img width="80px" height="auto" src="images/products/products-2.jpg" alt="image description"></td>
+									<img width="80px" height="auto" src="../images/products/products-2.jpg" alt="image description"></td>
 								<td class="product-details">
 									<h3 class="title">Study Table Combo</h3>
 									<span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
@@ -129,8 +133,13 @@ navbar();
 									<div class="">
 										<ul class="list-inline justify-content-center">
 											<li class="list-inline-item">
+												<a data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="view" href="">
+													<i class="fa fa-eye"></i>
+												</a>		
+											</li>
+											<li class="list-inline-item">
 												<a class="edit" href="">
-													<i class="fa fa-clipboard"></i>
+													<i class="fa fa-pencil"></i>
 												</a>		
 											</li>
 											<li class="list-inline-item">
@@ -145,7 +154,7 @@ navbar();
 							<tr>
 								
 								<td class="product-thumb">
-									<img width="80px" height="auto" src="images/products/products-3.jpg" alt="image description"></td>
+									<img width="80px" height="auto" src="../images/products/products-3.jpg" alt="image description"></td>
 								<td class="product-details">
 									<h3 class="title">Macbook Pro 15inch</h3>
 									<span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
@@ -158,8 +167,13 @@ navbar();
 									<div class="">
 										<ul class="list-inline justify-content-center">
 											<li class="list-inline-item">
+												<a data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="view" href="">
+													<i class="fa fa-eye"></i>
+												</a>		
+											</li>
+											<li class="list-inline-item">
 												<a class="edit" href="">
-													<i class="fa fa-clipboard"></i>
+													<i class="fa fa-pencil"></i>
 												</a>		
 											</li>
 											<li class="list-inline-item">
@@ -174,7 +188,7 @@ navbar();
 							<tr>
 								
 								<td class="product-thumb">
-									<img width="80px" height="auto" src="images/products/products-4.jpg" alt="image description"></td>
+									<img width="80px" height="auto" src="../images/products/products-4.jpg" alt="image description"></td>
 								<td class="product-details">
 									<h3 class="title">Macbook Pro 15inch</h3>
 									<span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
@@ -187,8 +201,13 @@ navbar();
 									<div class="">
 										<ul class="list-inline justify-content-center">
 											<li class="list-inline-item">
+												<a data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="view" href="">
+													<i class="fa fa-eye"></i>
+												</a>		
+											</li>
+											<li class="list-inline-item">
 												<a class="edit" href="">
-													<i class="fa fa-clipboard"></i>
+													<i class="fa fa-pencil"></i>
 												</a>		
 											</li>
 											<li class="list-inline-item">
@@ -203,7 +222,7 @@ navbar();
 							<tr>
 								
 								<td class="product-thumb">
-									<img width="80px" height="auto" src="images/products/products-1.jpg" alt="image description"></td>
+									<img width="80px" height="auto" src="../images/products/products-1.jpg" alt="image description"></td>
 								<td class="product-details">
 									<h3 class="title">Macbook Pro 15inch</h3>
 									<span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
@@ -216,8 +235,13 @@ navbar();
 									<div class="">
 										<ul class="list-inline justify-content-center">
 											<li class="list-inline-item">
+												<a data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="view" href="">
+													<i class="fa fa-eye"></i>
+												</a>		
+											</li>
+											<li class="list-inline-item">
 												<a class="edit" href="">
-													<i class="fa fa-clipboard"></i>
+													<i class="fa fa-pencil"></i>
 												</a>		
 											</li>
 											<li class="list-inline-item">
@@ -244,23 +268,19 @@ navbar();
 =============================-->
 
 <footer class="footer section section-sm">
-
 <?php
 
 footerInfo();
 
 ?>
-
 </footer>
 <!-- Footer Bottom -->
 <footer class="footer-bottom">
-
 <?php
 
 footerCopyright();
 
 ?>
-
 </footer>
 
 <?php

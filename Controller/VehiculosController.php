@@ -26,10 +26,10 @@ function ListarVehiculo()
                             <h4 class="card-title"><a href="">'.$fila["nombre_vehiculo"].'</a></h4>
                             <ul class="list-inline product-meta">
                                 <li class="list-inline-item">
-                                    <a href=""><i class="fa fa-car"></i>'.$fila["id_tipo"].'</a>
+                                    <a href=""><i class="fa fa-car"></i>'.$fila["tipo_vehiculo"].'</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href=""><i class="fa fa-calendar"></i>23 de Agosto</a>
+                                    <a href=""><i class="fa fa-calendar"></i>'.$fila["modelo_vehiculo"].'</a>
                                 </li>
                             </ul>
                             <p class="card-text">'.$fila["Direccion"].'</p>
