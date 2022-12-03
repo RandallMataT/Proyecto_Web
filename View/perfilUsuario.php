@@ -64,7 +64,6 @@ navbar();
 					<div class="widget user-dashboard-menu">
 						<ul>
 							<li class="active" ><a href=""><i class="fa fa-user"></i> Mis Vehiculos</a></li>
-							<li><a href=""><i class="fa fa-cog"></i> Cerrar Sesion</a></li>
 						</ul>
 					</div>
 				</div>
