@@ -8,11 +8,28 @@ function ListarMarcas()
 
     if($datos -> num_rows > 0)
     {
+        
         while($fila = mysqli_fetch_array($datos))
         {
             echo '<li class="list-inline-item">';
             echo '<a href=""><i class="fa fa-car" id="Bus'.$fila["marca_vehiculo"].'"></i>' . $fila["marca_vehiculo"] . '</a>';
             echo '</li>';
+
+        }
+    }
+}
+
+function ListarMarcasAgregar($datos)
+{
+    $datos = ListarMarcasModel();   
+
+    if($datos -> num_rows > 0)
+    {
+        echo '<option selected value=""> Seleccione </option>';
+        while($fila = mysqli_fetch_array($datos))
+        {
+            echo '<option value="' . $fila["Id"] . '">' . $fila["marca_vehiculo"] . '</option>';
+
         }
     }
 }

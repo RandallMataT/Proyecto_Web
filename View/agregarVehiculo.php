@@ -6,7 +6,10 @@ if (session_status() == PHP_SESSION_NONE)
 
 
 include_once __DIR__ . '\generales.php';
-
+include_once __DIR__ . '\..\Controller\ProvinciasController.php';
+include_once __DIR__ . '\..\Controller\MarcasController.php';
+include_once __DIR__ . '\..\Controller\VehiculosController.php';
+include_once __DIR__ . '\..\Controller\ModeloController.php';
 ?>
 
 <!DOCTYPE html>
@@ -74,8 +77,7 @@ include_once __DIR__ . '\generales.php';
 									<div class="form-group col-md-6">
 										<label for="inputState">marca</label>
 										<select id="inputState" class="form-control">
-											<option selected>Choose...</option>
-											<option>...</option>
+										<?php ListarMarcasAgregar($datos["marca_vehiculo"]); ?>
 										</select>
 									</div>
 								</div>
@@ -84,15 +86,13 @@ include_once __DIR__ . '\generales.php';
 									<div class="form-group col-md-6">
 										<label for="inputState">provincia</label>
 										<select id="inputState" class="form-control">
-											<option selected>Choose...</option>
-											<option>...</option>
+										 <?php ListarProvincias($datos["Nombre_provincia"]); ?>
 										</select>
 									</div>
 									<div class="form-group col-md-6">
 										<label for="inputState">estado del vehiculo</label>
 										<select id="inputState" class="form-control">
-											<option selected>Choose...</option>
-											<option>...</option>
+										<?php ListarEstadoVehiculo($datos["estado_vehiculo"]); ?>
 										</select>
 									</div>
 								</div>
@@ -100,15 +100,13 @@ include_once __DIR__ . '\generales.php';
 									<div class="form-group col-md-6">
 										<label for="inputState">transmision</label>
 										<select id="inputState" class="form-control">
-											<option selected>choose...</option>
-											<option>...</option>
+										<?php ListarTransmisionVehiculo($datos["tipo_transmision"]); ?>
 										</select>
 									</div>
 									<div class="form-group col-md-6">
 										<label for="modelo">modelo</label>
 										<select id="modelo" class="form-control">
-											<option selected>choose...</option>
-											<option>...</option>
+										<?php ListarModeloVehiculo($datos["modelo_vehiculo"]); ?>
 										</select>
 									</div>
 								</div>
@@ -116,8 +114,7 @@ include_once __DIR__ . '\generales.php';
 									<div class="form-group col-md-6">
 										<label for="tipo">tipo</label>
 										<select id="tipo" class="form-control">
-											<option selected>choose...</option>
-											<option>...</option>
+										  <?php ListarTipoVehiculo($datos["tipo_vehiculo"]); ?>
 										</select>
 									</div>
 									<div class="form-group col-md-6">

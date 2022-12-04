@@ -2,7 +2,7 @@
 
 include_once __DIR__ . '\..\Model\ProvinciasModel.php';
 
-function ListarProvincias()
+function ListarProvinciasCategoria()
 {
     $datos = ListarProvinciasModel();   
 
@@ -13,6 +13,23 @@ function ListarProvincias()
             echo '<li><a href="category.html">'. $fila["Nombre_provincia"] .'<span>'.random_int(40,120).'</span></a></li>'; 
         }
     }
+
+}
+
+function ListarProvincias($datos)
+{
+    $datos = ListarProvinciasModel();   
+
+    if($datos -> num_rows > 0)
+    {   
+        echo '<option selected value=""> Seleccione </option>';
+        while($fila = mysqli_fetch_array($datos))
+        {
+            echo '<option value="' . $fila["Id"] . '">' . $fila["Nombre_provincia"] . '</option>';
+            
+        }
+    }
+
 }
 
 

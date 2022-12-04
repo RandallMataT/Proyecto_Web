@@ -2,11 +2,11 @@
 
 include_once 'connBD.php';
 
-function ListarTipoVehiculoModel()
+function ListarEstadoVehiculoModel()
 {
     $enlace = OpenDB();
 
-    $procedimiento = "call ListarTipoVehiculo();";
+    $procedimiento = "call ListarEstadoVehiculo();";
     $datos = $enlace -> query($procedimiento);
 
     CloseDB($enlace);

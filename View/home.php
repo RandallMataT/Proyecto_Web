@@ -53,7 +53,7 @@ include_once __DIR__ . '\..\Controller\VehiculosController.php';
 					<!-- Header Contetnt -->
 					<div class="content-block">
 						<h1>Compra y Venta cerca de ti</h1>
-						<p>Mas que un auto <br> un compañeo de viaje</p>
+						<p>Mas que un auto <br> un compañero de viaje</p>
 						<div class="short-popular-category-list text-center">
 							<h2>Categorias Populares</h2>
 							<ul class="list-inline">

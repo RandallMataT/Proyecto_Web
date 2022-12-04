@@ -47,7 +47,7 @@ navbar();
     <h4 class="widget-header">Cercano</h4>
     <ul class="category-list">
     <?php
-    ListarProvincias();
+    ListarProvinciasCategoria();
     ?>
     </ul>
 </div>

@@ -1,6 +1,9 @@
 <?php
 
 include_once __DIR__ . '\..\Model\VehiculosModel.php';
+include_once __DIR__ . '\..\Model\TipoVehiculoModel.php';
+include_once __DIR__ . '\..\Model\EstadoVehiculoModel.php';
+include_once __DIR__ . '\..\Model\TransmisionVehiculoModel.php';
 
 function ListarVehiculo()
 {
@@ -50,8 +53,50 @@ function ListarVehiculo()
     }
 }
 
+function ListarTipoVehiculo($datos)
+{
+    $datos = ListarTipoVehiculoModel();   
 
+    if($datos -> num_rows > 0)
+    {
+        echo '<option selected value=""> Seleccione </option>';
+        while($fila = mysqli_fetch_array($datos))
+        {
+            echo '<option value="' . $fila["Id"] . '">' . $fila["tipo_vehiculo"] . '</option>';
 
+        }
+    }
+}
+
+function ListarEstadoVehiculo($datos)
+{
+    $datos = ListarEstadoVehiculoModel();   
+
+    if($datos -> num_rows > 0)
+    {
+        echo '<option selected value=""> Seleccione </option>';
+        while($fila = mysqli_fetch_array($datos))
+        {
+            echo '<option value="' . $fila["Id"] . '">' . $fila["estado_vehiculo"] . '</option>';
+
+        }
+    }
+}
+
+function ListarTransmisionVehiculo($datos)
+{
+    $datos = ListarTransmisionVehiculoModel();   
+
+    if($datos -> num_rows > 0)
+    {
+        echo '<option selected value=""> Seleccione </option>';
+        while($fila = mysqli_fetch_array($datos))
+        {
+            echo '<option value="' . $fila["Id"] . '">' . $fila["tipo_transmision"] . '</option>';
+
+        }
+    }
+}
 
 
 ?>
