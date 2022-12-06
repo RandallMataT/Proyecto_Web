@@ -46,7 +46,7 @@ include_once __DIR__ . '\..\Controller\UsuarioController.php';
 			<div class="row">
 				<div class="col-md-8 offset-md-2 text-center">
 					<!-- Title text -->
-					<h3>Agregar Vehiculo</h3>
+					<h3>Editar Vehiculo</h3>
 				</div>
 			</div>
 		</div>
@@ -62,7 +62,7 @@ include_once __DIR__ . '\..\Controller\UsuarioController.php';
 				<div class="col-md-10 offset-md-1">
 					<div class="card text-center">
 						<div class="card-header">
-							Nuevo Vehiculo
+							Vehiculo
 						</div>
 						<div class="card-body">
 

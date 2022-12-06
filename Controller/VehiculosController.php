@@ -5,6 +5,8 @@ include_once __DIR__ . '\..\Model\TipoVehiculoModel.php';
 include_once __DIR__ . '\..\Model\EstadoVehiculoModel.php';
 include_once __DIR__ . '\..\Model\TransmisionVehiculoModel.php';
 
+echo'<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
+
 function ListarVehiculo()
 {
     $datos = ListarVehiculoModel();   
@@ -98,5 +100,35 @@ function ListarTransmisionVehiculo($datos)
     }
 }
 
+function GestionVehiculosT()
+{
+    $datos = GestionVehiculoModel();   
+
+    if($datos -> num_rows > 0)
+    {
+        while($fila = mysqli_fetch_array($datos))
+        {
+            echo '<tr>';
+            echo '<td>' . $fila["nombre"] . '</td> ';
+            echo '<td>' . $fila["marca_vehiculo"] . '</td>';
+            echo '<td>' . $fila["Nombre_provincia"] . '</td>';
+            echo '<td>' . $fila["estado_vehiculo"] . '</td>';
+            echo '<td>' . $fila["modelo_vehiculo"] . '</td>';
+            echo '<td>' . $fila["tipo_transmision"] . '</td>'; 
+            echo '<td>' . $fila["tipo_vehiculo"] . '</td>'; 
+            echo '<td>' . $fila["nombre_vehiculo"] . '</td>'; 
+            echo '<td>' . $fila["Color"] . '</td>'; 
+            echo '<td>' . $fila["Motor"] . '</td>'; 
+            echo '<td>' . $fila["Precio"] . '</td>';
+            echo '<td>' . $fila["Direccion"] . '</td>'; 
+            echo '<td> <img  src="data:image/jpg;base64,'. base64_encode($fila['imagen']) .'" alt="Card image cap" 
+            height="150" width="250"> </td>'; 
+            //echo'<td> <a href="" class="edit" data-toggle="modal" ><i class="material-icons" data-toggle="tooltip" title="Edit" >&#xE254;</i></a>
+            //<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a></td>';
+            echo '<td> <a href=" >" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edit</a>  <br/><br/>
+            <a href=">" class="text-danger" onClick=""><i class="fa fa-fw fa-trash"></i>Delete</a></td>';
+        }
+    }
+}
 
 ?>

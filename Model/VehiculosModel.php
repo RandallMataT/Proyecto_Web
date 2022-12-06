@@ -13,6 +13,15 @@ function ListarVehiculoModel()
     return $datos;
 }
 
+function GestionVehiculoModel()
+{
+    $enlace = OpenDB();
 
+    $procedimiento = "call GestionVehiculos();";
+    $datos = $enlace -> query($procedimiento);
+
+    CloseDB($enlace);
+    return $datos;
+} 
 
 ?>

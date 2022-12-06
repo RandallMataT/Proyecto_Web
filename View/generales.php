@@ -20,6 +20,7 @@ function headerGeneral()
     <link href="../plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
     <!-- Bootstrap -->
     <link href="../plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../js/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
     <!-- Font Awesome -->
     <link href="../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Owl Carousel -->
@@ -73,6 +74,7 @@ echo '<div class="container">
             </a>
             <!-- Dropdown list -->
             <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="editarVehiculo.php">Editar Vehiculo</a>
             <a class="dropdown-item" href="gestionVehiculo.php">Gestión de vehiculos</a>
             <a class="dropdown-item" href="vehiculo.php">Vehiculo Destacado</a>
             <a class="dropdown-item" href="editarUsuario.php">Editar Usuario</a>
@@ -183,7 +185,9 @@ function javascripts()
     <script src="plugins/fancybox/jquery.fancybox.pack.js"></script>
     <script src="plugins/smoothscroll/SmoothScroll.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-    <script src="js/scripts.js"></script>';
+    <script src="js/scripts.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+    <script src="../js/dataTables.bootstrap4.min.js"></script>';
 
 
 

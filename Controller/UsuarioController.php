@@ -35,6 +35,20 @@ function ConsultarDatosUsuario($Id)
     return mysqli_fetch_array($datos);
 }
 
+function ListarUsuarioNombre($datos)
+{
+    $datos = ListarUsuarioModel();   
+
+    if($datos -> num_rows > 0)
+    {
+        echo '<option selected value=""> Seleccione </option>';
+        while($fila = mysqli_fetch_array($datos))
+        {
+            echo '<option value="' . $fila["Id"] . '">' . $fila["nombre"] . '</option>';
+
+        }
+    }
+}
 
 
 ?>

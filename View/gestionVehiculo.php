@@ -36,19 +36,38 @@ include_once __DIR__ . '\..\Controller\ModeloController.php';
 		?>
 	</section>
 
-    <div class="templatemo-panels">
+    	<!--================================
+=            Page Title            =
+=================================-->
+	<section class="page-title">
+		<!-- Container Start -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2 text-center">
+					<!-- Title text -->
+					<h3>Gestión Vehiculos</h3>
+				</div>
+			</div>
+		</div>
+		<!-- Container End -->
+	</section>
 
-<div class="row">
+<div class="templatemo-panels">
+
+<div class="row-md-12">
     <div class="col-md-12">
+       
+    <br/><br/>
 
     <div class="btn-group pull-right"> 
         <a href="agregarVehiculo.php"><button type="button" class="btn btn-success">Añadir Vehiculo</button></a>
     </div>
     
     <br/><br/><br/>
-
-    <table class="table table-bordered table-hover">
-        <thead>
+      
+    <table id="tablaVehiculos" class="table table-bordered table-hover">
+    <caption>Lista de Vehiculos</caption>
+        <thead class="thead-dark"> 
             <tr>
                 <th>Usuario</th>
                 <th>Marca</th>
@@ -68,15 +87,16 @@ include_once __DIR__ . '\..\Controller\ModeloController.php';
         </thead>
         <tbody>
             <?php
-                
+               GestionVehiculosT();
             ?>
         </tbody>
     </table>
+    
 
     </div>
+  </div>
 </div>
 
-</div>
 
 	<!--============================
 =            Footer            =
@@ -107,6 +127,15 @@ footerCopyright();
 javascripts();
 
 ?>
+
+
+<script>
+$(document).ready(function () {
+    $('#tablaVehiculos').DataTable();
+});
+</script>
+
+
 
 </body>
 

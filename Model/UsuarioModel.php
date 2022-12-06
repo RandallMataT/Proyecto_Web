@@ -28,5 +28,18 @@ function ConsultarDatosUsuarioModel($Id)
 }
 
 
+function ListarUsuarioModel()
+{
+    $enlace = OpenDB();
+
+    $procedimiento = "call ListarUsuarios();";
+    $datos = $enlace -> query($procedimiento);
+
+    CloseDB($enlace);
+    return $datos;
+}
+
+
+
 
 ?>
