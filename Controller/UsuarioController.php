@@ -50,5 +50,31 @@ function ListarUsuarioNombre($datos)
     }
 }
 
+if (isset($_POST["actualizarUsuario"]))
+{
+    $nombre = $_POST["txtNombre"];
+    $apellido = $_POST["txtApellido"];
+    $correo = $_POST["txtCorreo"];
+    $telefono = $_POST["txtTelefono"];
+    $contrasenna = $_POST["txtContrasenna"];
+    $Roles = $_POST["txtRol"];
+    $estado = $_POST["txtEstado"];
+    $Id = $_POST["txtId"];
+
+    $resultado = EditarUsuarioModel($nombre, $apellido, $correo, $telefono, $contrasenna, $Roles, $estado, $Id);
+
+    if($resultado == true)
+    {
+        //EnviarCorreo($Correo, 'Información Actualizada', 'Esta es la información actualizada');
+        header("Location: home.php"); 
+    }
+    else
+    {
+        //Que pasa si algo sale mal??
+        header("Location: home.php"); 
+    } 
+
+}
+
 
 ?>

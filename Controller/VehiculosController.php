@@ -24,11 +24,11 @@ function ListarVehiculo()
                         <div class="thumb-content">
                             <!-- <div class="price">$200</div> -->
                             <a href="">
-                                <img class="card-img-top img-fluid" src="data:image/jpg;base64,'. base64_encode($fila['imagen']) .'" alt="Card image cap">
+                                <img src="data:image/jpg;base64,'. base64_encode($fila['imagen']) .'" width="350" height="270" alt="Card image cap">
                             </a>
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title"><a href="">'.$fila["nombre_vehiculo"].'</a></h4>
+                            <h4 class="card-title"><a href="">' . $fila["marca_vehiculo"]. ' ' . $fila["nombre_vehiculo"].'</a></h4>
                             <ul class="list-inline product-meta">
                                 <li class="list-inline-item">
                                     <a href=""><i class="fa fa-car"></i>'.$fila["tipo_vehiculo"].'</a>

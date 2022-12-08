@@ -44,7 +44,7 @@ function ListarMarcasCategoria()
     {
         while($fila = mysqli_fetch_array($datos))
         {
-            echo '<li><a href="category.html">'. $fila["marca_vehiculo"] .'<span>'.random_int(40,120).'</span></a></li>';
+            echo '<li><a href="category.php">'. $fila["marca_vehiculo"] .'<span>'.random_int(40,120).'</span></a></li>';
         }
     }
 
@@ -59,26 +59,19 @@ function ListarMarcasEndPage()
         while($fila = mysqli_fetch_array($datos))
         {
            echo '<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
-						<div class="category-block">
+						<div class="category-block" >
 							<div class="header">
-								<i class="fa fa-car icon-bg-'.random_int(1,9).'"></i> 
+								<i class="fa fa-car icon-bg-'.random_int(1,8).'"></i> 
+                                <a href="category.php">
 								<h4>'. $fila["marca_vehiculo"] . '</h4>
+                                </a>
 							</div>
-							<ul class="category-list" >
-								<li><a href="category.html">Sedan <span>93</span></a></li>
-								<li><a href="category.html">4x4 <span>233</span></a></li>
-								<li><a href="category.html">Suv <span>183</span></a></li>
-								<li><a href="category.html">pickup <span>343</span></a></li>
-							</ul>
+							<a href="">
+                            <img src="data:image/jpg;base64,'. base64_encode($fila['imagenMarca']) .'" width="200" height="200" alt="Card image cap">
+                            </a>
 						</div>
 					</div>';
         }
     }
 
 }
-
-
-
-
-
-?>

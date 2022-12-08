@@ -39,7 +39,20 @@ function ListarUsuarioModel()
     return $datos;
 }
 
+function EditarUsuarioModel($nombre, $apellido, $correo, $telefono, $contrasenna, $Roles, $estado, $Id)
+{
+$enlace = OpenDB();
+$resultado = false;
 
+$procedimiento = "call EditarUsuario('$nombre','$apellido','$correo','$telefono','$contrasenna',$Roles,$estado,$Id);";
+
+if($enlace -> query($procedimiento))
+    $resultado = true; 
+
+CloseDB($enlace);
+return $resultado;
+
+}
 
 
 ?>

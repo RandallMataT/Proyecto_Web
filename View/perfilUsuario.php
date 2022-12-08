@@ -48,7 +48,7 @@ navbar();
 					<div class="widget user-dashboard-profile">
 						<!-- User Image -->
 						<div class="profile-thumb">
-							<img src="../images/user/user-thumb.jpg" alt="" class="rounded-circle">
+							<img src="../images/user/default-user.png" alt="" class="rounded-circle">
 						</div>
 						<!-- User Name -->
 						<label for="">Nombre</label>
@@ -58,13 +58,12 @@ navbar();
 						<label for="">Telefono</label>
 						<h5 class="text-center"> <?php echo $datos["telefono"]; ?> </h5>
 						
-						<a href="user-profile.html" class="btn btn-main-sm">Editar Perfil</a>
+						<a href="editarUsuario.php?q=<?php echo $_SESSION["SesionId"]?>" class="btn btn-main-sm">Editar Perfil</a>
 					</div>
 					<!-- Dashboard Links -->
 					<div class="widget user-dashboard-menu">
 						<ul>
 							<li class="active" ><a href=""><i class="fa fa-user"></i> Mis Vehiculos</a></li>
-							<li><a href=""><i class="fa fa-cog"></i> Cerrar Sesion</a></li>
 						</ul>
 					</div>
 				</div>

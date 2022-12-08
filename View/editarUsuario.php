@@ -7,6 +7,10 @@ if (session_status() == PHP_SESSION_NONE)
 
 
 include_once __DIR__ . '\generales.php';
+include_once __DIR__ . '\..\Controller\UsuarioController.php';
+
+
+$datos = ConsultarDatosUsuario($_GET["q"]);
 
 ?>
 
@@ -45,28 +49,14 @@ navbar();
 					<div class="widget user-dashboard-profile">
 						<!-- User Image -->
 						<div class="profile-thumb">
-							<img src="images/user/user-thumb.jpg" alt="" class="rounded-circle">
+							<img src="../images/user/default-user.png" alt="" class="rounded-circle">
 						</div>
 						<!-- User Name -->
-						<h5 class="text-center">Samanta Doe</h5>
+						<h5 class="text-center"> <?php echo $_SESSION["sesionNombre"]?> </h5>
 					</div>
 					<!-- Dashboard Links -->
 					<div class="widget user-dashboard-menu">
 						<ul>
-							<li>
-								<a href="dashboard-my-ads.html"><i class="fa fa-user"></i> Mis Vehiculos</a></li>
-							<li>
-								<a href="dashboard-favourite-ads.html"><i class="fa fa-bookmark-o"></i> Vehiculos Favoritos <span>5</span></a>
-							</li>
-							<li>
-								<a href="dashboard-archived-ads.html"><i class="fa fa-file-archive-o"></i>Vehiculos Guardados <span>12</span></a>
-							</li>
-							<li>
-								<a href="dashboard-pending-ads.html"><i class="fa fa-bolt"></i>Vehiculos Pendientes<span>23</span></a>
-							</li>
-							<li>
-								<a href="logout.html"><i class="fa fa-cog"></i> Cerrar Sesion</a>
-							</li>
 							<li>
 								<a href="delete-account.html"><i class="fa fa-power-off"></i>Eliminar Perfil</a>
 							</li>
@@ -78,65 +68,47 @@ navbar();
 				<!-- Edit Personal Info -->
 				<div class="widget personal-info">
 					<h3 class="widget-header user">Editar Informacion</h3>
-					<form action="#">
+					<form action="" method="POST">
+						<!-- id -->
+						<div class="form-group">
+						    <input type="hidden" class="form-control" id="txtId" name="txtId" required value="<?php echo $datos["Id"] ?>">
+						</div>
 						<!-- First Name -->
 						<div class="form-group">
 						    <label for="first-name0"> Nombre</label>
-						    <input type="text" class="form-control" id="first-name">
+						    <input type="text" class="form-control" id="txtNombre" name="txtNombre" required value="<?php echo $datos["nombre"] ?>">
 						</div>
 						<!-- Last Name -->
 						<div class="form-group">
-						    <label for="last-name">Apellidos</label>
-						    <input type="text" class="form-control" id="last-name">
-						</div>
-						<!-- File chooser -->
-						<div class="form-group choose-file">
-							<i class="fa fa-user text-center"></i>
-						    <input type="file" class="form-control-file d-inline" id="input-file">
-						 </div>
-						<!-- Submit button -->
-						<button class="btn btn-transparent">Guardar</button>
-					</form>
-				</div>
-				<!-- Change Password -->
-				<div class="widget change-password">
-					<h3 class="widget-header user">Editar Contraseña</h3>
-					<form action="#">
-						<!-- Current Password -->
-						<div class="form-group">
-						    <label for="current-password">Vieja Contraseña</label>
-						    <input type="password" class="form-control" id="current-password">
-						</div>
-						<!-- New Password -->
-						<div class="form-group">
-						    <label for="new-password">Nueva Contraseña</label>
-						    <input type="password" class="form-control" id="new-password">
-						</div>
-						<!-- Confirm New Password -->
-						<div class="form-group">
-						    <label for="confirm-password">Confirmar Nueva Contraseña</label>
-						    <input type="password" class="form-control" id="confirm-password">
-						</div>
-						<!-- Submit Button -->
-						<button class="btn btn-transparent">Cambiar Contraseña</button>
-					</form>
-				</div>
-				<!-- Change Email Address -->
-				<div class="widget change-email mb-0">
-					<h3 class="widget-header user">Editar direccion de correo</h3>
-					<form action="#">
-						<!-- Current Password -->
-						<div class="form-group">
-						    <label for="current-email">Viejo Correo</label>
-						    <input type="email" class="form-control" id="current-email">
+						    <label for="last-name">Apellido</label>
+						    <input type="text" class="form-control" id="txtApellido" name="txtApellido" required value="<?php echo $datos["apellido"] ?>">
 						</div>
 						<!-- New email -->
 						<div class="form-group">
 						    <label for="new-email">Nuevo Correo</label>
-						    <input type="email" class="form-control" id="new-email">
+						    <input type="email" class="form-control" id="txtCorreo" name="txtCorreo" required value="<?php echo $datos["correo"] ?>">
 						</div>
-						<!-- Submit Button -->
-						<button class="btn btn-transparent">Cambiar Correo</button>
+						<!-- New phone -->
+						<div class="form-group">
+						    <label for="new-email">Nuevo Telefono</label>
+						    <input type="text" class="form-control" id="txtTelefono" name="txtTelefono" required value="<?php echo $datos["telefono"] ?>">
+						</div>
+						<!-- New Password -->
+						<div class="form-group">
+						    <label for="new-password">Nueva Contraseña</label>
+						    <input type="text" class="form-control" id="txtContrasenna" name="txtContrasenna" required value="<?php echo $datos["contrasenna"] ?>">
+						</div>
+						<!-- Role -->
+						<div class="form-group">
+						    <label for="new-password">Rol</label>
+						    <input type="text" class="form-control" id="txtRol" name="txtRol" required readonly value="<?php echo $datos["Roles"] ?>">
+						</div>
+						<!-- estado -->
+						<div class="form-group">
+						    <input type="hidden" class="form-control" id="txtEstado" name="txtEstado" required value="<?php echo $datos["estado"] ?>">
+						</div>
+						<!-- Submit button -->
+						<button class="btn btn-transparent" id="actualizarUsuario" name="actualizarUsuario">Guardar</button>
 					</form>
 				</div>
 			</div>
