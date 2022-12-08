@@ -25,7 +25,9 @@ include_once __DIR__ . '\Controller\UsuarioController.php';
   <a href="View\home.php"></a>
     <div class="main">
       <div class="container a-container" id="a-container">
+
         <form class="form" id="a-form" method="post" action="">
+
           <h2 class="form_title title">Crear Cuenta</h2>
           <div class="form__icons"></div>
           <span class="form__span">Utilice su correo electronico</span>
@@ -34,10 +36,14 @@ include_once __DIR__ . '\Controller\UsuarioController.php';
           <input class="form__input" type="text" placeholder="Correo" />
           <input class="form__input" type="password" placeholder="Contraseña" />
           <button class="form__button button submit">Registrarse</button>
+
         </form>
+
       </div>
       <div class="container b-container" id="b-container">
+
         <form class="form" id="b-form" role="form" method="post" action="">
+          
           <h2 class="form_title title">Iniciar Sesion</h2>
           <div class="form__icons"></div>
           <span class="form__span">Utilize su correo electronico</span>
