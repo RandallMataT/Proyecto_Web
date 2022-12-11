@@ -9,6 +9,8 @@ if (session_status() == PHP_SESSION_NONE)
 include_once __DIR__ . '\generales.php';
 include_once __DIR__ . '\..\Controller\MarcasController.php';
 include_once __DIR__ . '\..\Controller\ProvinciasController.php';
+include_once __DIR__ . '\..\Controller\VehiculosController.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,295 +48,35 @@ navbar();
 <div class="widget category-list">
     <h4 class="widget-header">Cercano</h4>
     <ul class="category-list">
+ 
+    
+    
     <?php
-    ListarProvinciasCategoria();
+   ListarProvinciasCategoria();
     ?>
-    </ul>
+   
+</ul>
 </div>
-                </div>
+    </div>
             </div>
             <div class="col-md-9">          
                 <div class="product-grid-list">
                     <div class="row mt-30">
-                        <div class="col-sm-12 col-lg-4 col-md-6">
-                            <!-- product card -->
-<div class="product-item bg-light">
-    <div class="card">
-        <div class="thumb-content">
-            <!-- <div class="price">$200</div> -->
-            <a href="">
-                <img class="card-img-top img-fluid" src="../images/products/imgNissan.jpg" alt="Card image cap">
-            </a>
-        </div>
-        <div class="card-body">
-            <h4 class="card-title"><a href="">Nombre del vehiculo</a></h4>
-            <ul class="list-inline product-meta">
-                <li class="list-inline-item">
-                    <a href=""><i class="fa fa-folder-open-o"></i>Marca</a>
-                </li>
-            </ul>
-            <p class="card-text">Información del vehiculo</p>
-            <div class="product-ratings">
-                <ul class="list-inline">
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-                        </div>
-                        <div class="col-sm-12 col-lg-4 col-md-6">
-                            <!-- product card -->
-<div class="product-item bg-light">
-    <div class="card">
-        <div class="thumb-content">
-            <!-- <div class="price">$200</div> -->
-            <a href="">
-                <img class="card-img-top img-fluid" src="../images/products/imgJeep.jpg" alt="Card image cap">
-            </a>
-        </div>
-        <div class="card-body">
-            <h4 class="card-title"><a href="">Nombre del vehiculo</a></h4>
-            <ul class="list-inline product-meta">
-                <li class="list-inline-item">
-                    <a href=""><i class="fa fa-folder-open-o"></i>Marca</a>
-                </li>
-            </ul>
-            <p class="card-text">Información del vehiculo</p>
-            <div class="product-ratings">
-                <ul class="list-inline">
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-                        </div>
-                        <div class="col-sm-12 col-lg-4 col-md-6">
-                            <!-- product card -->
-<div class="product-item bg-light">
-    <div class="card">
-        <div class="thumb-content">
-            <!-- <div class="price">$200</div> -->
-            <a href="">
-                <img class="card-img-top img-fluid" src="../images/products/imgToyota.jpg" alt="Card image cap">
-            </a>
-        </div>
-        <div class="card-body">
-            <h4 class="card-title"><a href="">Nombre del vehiculo</a></h4>
-            <ul class="list-inline product-meta">
-                <li class="list-inline-item">
-                    <a href=""><i class="fa fa-folder-open-o"></i>Marca</a>
-                </li>
-            </ul>
-            <p class="card-text">Información del vehiculo</p>
-            <div class="product-ratings">
-                <ul class="list-inline">
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-                        </div>
-                        <div class="col-sm-12 col-lg-4 col-md-6">
-                            <!-- product card -->
-<div class="product-item bg-light">
-    <div class="card">
-        <div class="thumb-content">
-            <!-- <div class="price">$200</div> -->
-            <a href="">
-                <img class="card-img-top img-fluid" src="../images/products/imgNissan.jpg" alt="Card image cap">
-            </a>
-        </div>
-        <div class="card-body">
-            <h4 class="card-title"><a href="">Nombre del vehiculo</a></h4>
-            <ul class="list-inline product-meta">
-                <li class="list-inline-item">
-                    <a href=""><i class="fa fa-folder-open-o"></i>Marca</a>
-                </li>
-            </ul>
-            <p class="card-text">Información del vehiculo</p>
-            <div class="product-ratings">
-                <ul class="list-inline">
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-                        </div>
-                        <div class="col-sm-12 col-lg-4 col-md-6">
-                            <!-- product card -->
-<div class="product-item bg-light">
-    <div class="card">
-        <div class="thumb-content">
-            <!-- <div class="price">$200</div> -->
-            <a href="">
-                <img class="card-img-top img-fluid" src="../images/products/imgJeep.jpg" alt="Card image cap">
-            </a>
-        </div>
-        <div class="card-body">
-            <h4 class="card-title"><a href="">Nombre del vehiculo</a></h4>
-            <ul class="list-inline product-meta">
-                <li class="list-inline-item">
-                    <a href=""><i class="fa fa-folder-open-o"></i>Marca</a>
-                </li>
-            </ul>
-            <p class="card-text">Información del vehiculo</p>
-            <div class="product-ratings">
-                <ul class="list-inline">
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-                        </div>
-                        <div class="col-sm-12 col-lg-4 col-md-6">
-                            <!-- product card -->
-<div class="product-item bg-light">
-    <div class="card">
-        <div class="thumb-content">
-            <!-- <div class="price">$200</div> -->
-            <a href="">
-                <img class="card-img-top img-fluid" src="../images/products/imgToyota.jpg" alt="Card image cap">
-            </a>
-        </div>
-        <div class="card-body">
-            <h4 class="card-title"><a href="">Nombre del vehiculo</a></h4>
-            <ul class="list-inline product-meta">
-                <li class="list-inline-item">
-                    <a href=""><i class="fa fa-folder-open-o"></i>Marca</a>
-                </li>
-            </ul>
-            <p class="card-text">Información del vehiculo</p>
-            <div class="product-ratings">
-                <ul class="list-inline">
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-                        </div>
-                        <div class="col-sm-12 col-lg-4 col-md-6">
-                            <!-- product card -->
-<div class="product-item bg-light">
-    <div class="card">
-        <div class="thumb-content">
-            <!-- <div class="price">$200</div> -->
-            <a href="">
-                <img class="card-img-top img-fluid" src="../images/products/imgNissan.jpg" alt="Card image cap">
-            </a>
-        </div>
-        <div class="card-body">
-            <h4 class="card-title"><a href="">Nombre del vehiculo</a></h4>
-            <ul class="list-inline product-meta">
-                <li class="list-inline-item">
-                    <a href=""><i class="fa fa-folder-open-o"></i>Marca</a>
-                </li>
-            </ul>
-            <p class="card-text">Información del vehiculo</p>
-            <div class="product-ratings">
-                <ul class="list-inline">
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-                        </div>
-                        <div class="col-sm-12 col-lg-4 col-md-6">
-                            <!-- product card -->
-<div class="product-item bg-light">
-    <div class="card">
-        <div class="thumb-content">
-            <!-- <div class="price">$200</div> -->
-            <a href="">
-                <img class="card-img-top img-fluid" src="../images/products/imgJeep.jpg" alt="Card image cap">
-            </a>
-        </div>
-        <div class="card-body">
-            <h4 class="card-title"><a href="">Nombre del vehiculo</a></h4>
-            <ul class="list-inline product-meta">
-                <li class="list-inline-item">
-                    <a href=""><i class="fa fa-folder-open-o"></i>Marca</a>
-                </li>
-            </ul>
-            <p class="card-text">Información del vehiculo</p>
-            <div class="product-ratings">
-                <ul class="list-inline">
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-                        </div>
-                        <div class="col-sm-12 col-lg-4 col-md-6">
-                            <!-- product card -->
-<div class="product-item bg-light">
-    <div class="card">
-        <div class="thumb-content">
-            <!-- <div class="price">$200</div> -->
-            <a href="">
-                <img class="card-img-top img-fluid" src="../images/products/imgToyota.jpg" alt="Card image cap">
-            </a>
-        </div>
-        <div class="card-body">
-            <h4 class="card-title"><a href="">Nombre del vehiculo</a></h4>
-            <ul class="list-inline product-meta">
-                <li class="list-inline-item">
-                    <a href=""><i class="fa fa-folder-open-o"></i>Marca</a>
-                </li>
-            </ul>
-            <p class="card-text">Información del vehiculo</p>
-            <div class="product-ratings">
-                <ul class="list-inline">
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-                        </div>
+                    
+<?php
+  ListarVehiculoCategoria();
+
+ ?>    
+
+
+
+
+
+
+
+
+              
+                       
                     </div>
                 </div>
                 <div class="pagination justify-content-center">

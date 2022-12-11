@@ -66,7 +66,7 @@ echo '<div class="container">
             <a class="nav-link" href="perfilUsuario.php?q='. $_SESSION["SesionId"] .'"><i class="fa fa-user"></i> Bienvenido '.$_SESSION["sesionNombre"].'</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.php">Inicio</a>
+            <a class="nav-link" href="home.php">Inicio</a>
           </li>
           <li class="nav-item dropdown dropdown-slide">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -44,11 +44,13 @@ function ListarMarcasCategoria()
     {
         while($fila = mysqli_fetch_array($datos))
         {
-            echo '<li><a href="category.php">'. $fila["marca_vehiculo"] .'<span>'.random_int(40,120).'</span></a></li>';
+            echo '<li><a href="category.php?f=">'. $fila["marca_vehiculo"] .'<span>'.random_int(40,120).'</span></a></li>';
         }
     }
 
 }
+
+
 
 function ListarMarcasEndPage()
 {
@@ -75,3 +77,82 @@ function ListarMarcasEndPage()
     }
 
 }
+
+function ListarBuskia()
+{
+
+    $datos = BusKiaModel();   
+
+    if($datos -> num_rows > 0)
+    {
+        while($fila = mysqli_fetch_array($datos))
+        {
+            echo '<li><a href="category.html">'. $fila["KIA"] .'<span>'.random_int(40,120).'</span></a></li>';
+        }
+    }
+
+}
+
+
+function ListarBusSuzuki()
+{
+
+    $datos = BusSuzukiModel();   
+
+    if($datos -> num_rows > 0)
+    {
+        while($fila = mysqli_fetch_array($datos))
+        {
+            echo '<li><a href="category.html">'. $fila["Suzuki"] .'<span>'.random_int(40,120).'</span></a></li>';
+        }
+    }
+
+}
+
+
+function ListarBusToyota()
+{
+
+    $datos = BusToyotaModel();   
+
+    if($datos -> num_rows > 0)
+    {
+        while($fila = mysqli_fetch_array($datos))
+        {
+            echo '<li><a href="category.html">'. $fila["Toyota"] .'<span>'.random_int(40,120).'</span></a></li>';
+        }
+    }
+
+}
+
+function ListarBusVolskwagen()
+{
+
+    $datos = BusVolskwagenModel();   
+
+    if($datos -> num_rows > 0)
+    {
+        while($fila = mysqli_fetch_array($datos))
+        {
+            echo '<li><a href="category.html">'. $fila["Volskwagen"] .'<span>'.random_int(40,120).'</span></a></li>';
+        }
+    }
+
+}
+
+function ListarBusNissan()
+{
+
+    $datos =  BusNissanModel();   
+
+    if($datos -> num_rows > 0)
+    {
+        while($fila = mysqli_fetch_array($datos))
+        {
+            echo '<li><a href="category.html">'. $fila["Nissan"] .'<span>'.random_int(40,120).'</span></a></li>';
+        }
+    }
+
+}
+
+?>
