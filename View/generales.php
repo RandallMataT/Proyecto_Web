@@ -48,7 +48,7 @@ function headerGeneral()
 function navbar()
 {
   
-  include_once __DIR__ . '\..\Controller\UtilitarioController.php';
+  include_once __DIR__ . '\..\Controller\UsuarioController.php';
 
 echo '<div class="container">
 <div class="row">

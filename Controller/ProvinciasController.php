@@ -16,7 +16,11 @@ function ListarProvinciasCategoria()
 
 }
 
+<<<<<<< HEAD
+function ListarProvincias($tipo)
+=======
 function ListarProvincias($datos)
+>>>>>>> 7761e2d09b1da754399ed9e47bb86e66ebfcd0d6
 {
     $datos = ListarProvinciasModel();   
 
@@ -25,6 +29,12 @@ function ListarProvincias($datos)
         echo '<option selected value=""> Seleccione </option>';
         while($fila = mysqli_fetch_array($datos))
         {
+<<<<<<< HEAD
+            if($tipo == $fila["Id"])
+            echo '<option selected value="' . $fila["Id"] . '">' . $fila["Nombre_provincia"] . '</option>';
+            else
+=======
+>>>>>>> 7761e2d09b1da754399ed9e47bb86e66ebfcd0d6
             echo '<option value="' . $fila["Id"] . '">' . $fila["Nombre_provincia"] . '</option>';
             
         }

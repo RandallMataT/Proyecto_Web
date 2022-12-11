@@ -104,7 +104,8 @@ function ListarVehiculoCategoria()
 
 
 
-function ListarTipoVehiculo($datos)
+<<<<<<< HEAD
+function ListarTipoVehiculo($tipo)
 {
     $datos = ListarTipoVehiculoModel();   
 
@@ -113,8 +114,64 @@ function ListarTipoVehiculo($datos)
         echo '<option selected value=""> Seleccione </option>';
         while($fila = mysqli_fetch_array($datos))
         {
+            if($tipo == $fila["id"])
+            echo '<option selected value="' . $fila["id"] . '">' . $fila["tipo_vehiculo"] . '</option>';
+            else
+            echo '<option value="' . $fila["id"] . '">' . $fila["tipo_vehiculo"] . '</option>';
+
+        }
+    }
+}
+
+function ListarEstadoVehiculo($tipo)
+{
+    $datos = ListarEstadoVehiculoModel();   
+
+    if($datos -> num_rows > 0)
+    {
+        echo '<option selected value=""> Seleccione </option>';
+        while($fila = mysqli_fetch_array($datos))
+        {
+            if($tipo == $fila["Id"])
+            echo '<option selected value="' . $fila["Id"] . '">' . $fila["estado_vehiculo"] . '</option>';
+            else
+            echo '<option value="' . $fila["Id"] . '">' . $fila["estado_vehiculo"] . '</option>';
+
+        }
+    }
+}
+
+function ListarTransmisionVehiculo($tipo)
+{
+    $datos = ListarTransmisionVehiculoModel();   
+
+    if($datos -> num_rows > 0)
+    {
+        echo '<option selected value=""> Seleccione </option>';
+        while($fila = mysqli_fetch_array($datos))
+        {
+            if($tipo == $fila["id"])
+            echo '<option selected value="' . $fila["id"] . '">' . $fila["tipo_transmision"] . '</option>';
+            else
+            echo '<option value="' . $fila["id"] . '">' . $fila["tipo_transmision"] . '</option>';
+        }
+    }
+}
+=======
+function ListarTipoVehiculo($datos)
+{
+    $datos = ListarTipoVehiculoModel();   
+>>>>>>> 7761e2d09b1da754399ed9e47bb86e66ebfcd0d6
+
+    if($datos -> num_rows > 0)
+    {
+        echo '<option selected value=""> Seleccione </option>';
+        while($fila = mysqli_fetch_array($datos))
+        {
             echo '<option value="' . $fila["Id"] . '">' . $fila["tipo_vehiculo"] . '</option>';
 
+<<<<<<< HEAD
+=======
         }
     }
 }
@@ -149,6 +206,7 @@ function ListarTransmisionVehiculo($datos)
     }
 }
 
+>>>>>>> 7761e2d09b1da754399ed9e47bb86e66ebfcd0d6
 function GestionVehiculosT()
 {
     $datos = GestionVehiculoModel();   
@@ -174,10 +232,24 @@ function GestionVehiculosT()
             height="150" width="250"> </td>'; 
             //echo'<td> <a href="" class="edit" data-toggle="modal" ><i class="material-icons" data-toggle="tooltip" title="Edit" >&#xE254;</i></a>
             //<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a></td>';
+<<<<<<< HEAD
+            echo '<td> <a href="editarVehiculo.php?f='.$fila["Id"].'" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edit</a>  <br/><br/>
+=======
             echo '<td> <a href=" >" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edit</a>  <br/><br/>
+>>>>>>> 7761e2d09b1da754399ed9e47bb86e66ebfcd0d6
             <a href=">" class="text-danger" onClick=""><i class="fa fa-fw fa-trash"></i>Delete</a></td>';
         }
     }
 }
 
+<<<<<<< HEAD
+function ConsultarCarrosIdUsuario($id)
+{
+    $datos = ConsultarCarroIdModel($id);   
+    return mysqli_fetch_array($datos);
+}
+
+
+=======
+>>>>>>> 7761e2d09b1da754399ed9e47bb86e66ebfcd0d6
 ?>

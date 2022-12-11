@@ -13,6 +13,8 @@ function ListarMarcasModel()
     return $datos;
 }
 
+
+
 function BusKiaModel()
 {
     $enlace = OpenDB();

@@ -54,5 +54,18 @@ return $resultado;
 
 }
 
+<<<<<<< HEAD
+function ConsultarCarroUsuarioModel($Id)
+{
+    $enlace = OpenDB();
+
+    $procedimiento = "call CarroUsuario($Id);";
+    $datos = $enlace -> query($procedimiento);
+
+    CloseDB($enlace);
+    return $datos;
+}
+=======
+>>>>>>> 7761e2d09b1da754399ed9e47bb86e66ebfcd0d6
 
 ?>

@@ -19,7 +19,11 @@ function ListarMarcas()
     }
 }
 
+<<<<<<< HEAD
+function ListarMarcasAgregar($tipo)
+=======
 function ListarMarcasAgregar($datos)
+>>>>>>> 7761e2d09b1da754399ed9e47bb86e66ebfcd0d6
 {
     $datos = ListarMarcasModel();   
 
@@ -28,7 +32,14 @@ function ListarMarcasAgregar($datos)
         echo '<option selected value=""> Seleccione </option>';
         while($fila = mysqli_fetch_array($datos))
         {
+<<<<<<< HEAD
+            if($tipo == $fila["Id"])
+            echo '<option selected value="' . $fila["Id"] . '">' . $fila["marca_vehiculo"] . '</option>';
+            else
+               echo '<option value="' . $fila["Id"] . '">' . $fila["marca_vehiculo"] . '</option>';
+=======
             echo '<option value="' . $fila["Id"] . '">' . $fila["marca_vehiculo"] . '</option>';
+>>>>>>> 7761e2d09b1da754399ed9e47bb86e66ebfcd0d6
 
         }
     }
