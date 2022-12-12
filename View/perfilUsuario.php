@@ -71,13 +71,6 @@ navbar();
 			</div>
 			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
 				<!-- Recently Favorited -->
-<<<<<<< HEAD
-				
-				<?php
-                    ConsultarCarroUsuario($datos["Id"]);
-				?>
-				
-=======
 				<div class="widget dashboard-container my-adslist">
 					<h3 class="widget-header">Mis Vehiculos</h3>
 					<table class="table table-responsive product-dashboard-table">
@@ -128,7 +121,6 @@ navbar();
 					</table>
 					
 				</div>
->>>>>>> 7761e2d09b1da754399ed9e47bb86e66ebfcd0d6
 			</div>
 		</div>
 		<!-- Row End -->

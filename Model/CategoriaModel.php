@@ -2,20 +2,15 @@
 
 include_once 'connBD.php';
 
-function ListarMarcasModel()
+function ConsultarMarcasVehiculoModel($Id_marca)
 {
     $enlace = OpenDB();
 
-    $procedimiento = "call ListarMarcas();";
+    $procedimiento = "call ConsultarMarcaId($Id_marca);";
     $datos = $enlace -> query($procedimiento);
 
     CloseDB($enlace);
     return $datos;
 }
 
-
-
-
-
 ?>
-

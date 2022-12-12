@@ -35,11 +35,7 @@ function ConsultarDatosUsuario($Id)
     return mysqli_fetch_array($datos);
 }
 
-<<<<<<< HEAD
-function ListarUsuarioNombre($tipo)
-=======
 function ListarUsuarioNombre($datos)
->>>>>>> 7761e2d09b1da754399ed9e47bb86e66ebfcd0d6
 {
     $datos = ListarUsuarioModel();   
 
@@ -48,23 +44,12 @@ function ListarUsuarioNombre($datos)
         echo '<option selected value=""> Seleccione </option>';
         while($fila = mysqli_fetch_array($datos))
         {
-<<<<<<< HEAD
-            if($tipo == $fila["Id"])
-            echo '<option selected value="' . $fila["Id"] . '">' . $fila["nombre"] . '</option>';
-            else
-=======
->>>>>>> 7761e2d09b1da754399ed9e47bb86e66ebfcd0d6
             echo '<option value="' . $fila["Id"] . '">' . $fila["nombre"] . '</option>';
 
         }
     }
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 7761e2d09b1da754399ed9e47bb86e66ebfcd0d6
 if (isset($_POST["actualizarUsuario"]))
 {
     $nombre = $_POST["txtNombre"];
@@ -88,80 +73,8 @@ if (isset($_POST["actualizarUsuario"]))
         //Que pasa si algo sale mal??
         header("Location: home.php"); 
     } 
-<<<<<<< HEAD
-}
-    function ConsultarCarroUsuario($Id)
-{
-    $datos = ConsultarCarroUsuarioModel($Id); 
-    if($datos -> num_rows > 0)
-    {
-        while($fila = mysqli_fetch_array($datos))
-        {
-            echo'<div class="widget dashboard-container my-adslist">
-            <h3 class="widget-header">Mis Vehiculos</h3>
-            <table class="table table-responsive product-dashboard-table">
-                <thead>
-                    <tr>
-                        <th>Imagen</th>
-                        <th>Caracteristicas</th>
-                        <th class="text-center">Marca</th>
-                        <th class="text-center">Accion</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        
-                        <td class="product-thumb">
-                            <img width="80px" height="auto" src="data:image/jpg;base64,'. base64_encode($fila['imagen']) .'" alt="image description"></td>
-                        <td class="product-details">
-                            <h3 class="title">'.$fila["nombre_vehiculo"].' </h3>
-                            <span class="add-id"><strong>Codigo</strong>'.$fila["Id"].'</span>
-                            <span><strong>Publicado: </strong><time>11/12/2022</time> </span>
-                            <span class="status active"><strong>Estado</strong>Active</span>
-                            <span class="location"><strong>Dirección</strong>'.$fila["Direccion"].'</span>
-                        </td>
-                        <td class="product-category"><span class="categories">'.$fila["marca_vehiculo"].'</span></td>
-                        <td class="action" data-title="Action">
-                            <div class="">
-                                <ul class="list-inline justify-content-center">
-                                    <li class="list-inline-item">
-                                        <a data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="view" href="vehiculo.php">
-                                            <i class="fa fa-eye"></i>
-                                        </a>		
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a class="edit" href="editarVehiculo.php?f='.$fila["Id"].'">
-                                            <i class="fa fa-pencil"></i>
-                                        </a>		
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a class="delete" href="">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            
-        </div>';
-
-        
-        }
-        
-    }else 
-    echo'No hay vehiculos disponibles';
-    return mysqli_fetch_array($datos);
-}
-
-
-
-=======
 
 }
->>>>>>> 7761e2d09b1da754399ed9e47bb86e66ebfcd0d6
 
 
 ?>

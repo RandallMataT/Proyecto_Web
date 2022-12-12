@@ -19,11 +19,7 @@ function ListarMarcas()
     }
 }
 
-<<<<<<< HEAD
 function ListarMarcasAgregar($tipo)
-=======
-function ListarMarcasAgregar($datos)
->>>>>>> 7761e2d09b1da754399ed9e47bb86e66ebfcd0d6
 {
     $datos = ListarMarcasModel();   
 
@@ -32,14 +28,10 @@ function ListarMarcasAgregar($datos)
         echo '<option selected value=""> Seleccione </option>';
         while($fila = mysqli_fetch_array($datos))
         {
-<<<<<<< HEAD
             if($tipo == $fila["Id"])
             echo '<option selected value="' . $fila["Id"] . '">' . $fila["marca_vehiculo"] . '</option>';
             else
                echo '<option value="' . $fila["Id"] . '">' . $fila["marca_vehiculo"] . '</option>';
-=======
-            echo '<option value="' . $fila["Id"] . '">' . $fila["marca_vehiculo"] . '</option>';
->>>>>>> 7761e2d09b1da754399ed9e47bb86e66ebfcd0d6
 
         }
     }
@@ -55,7 +47,7 @@ function ListarMarcasCategoria()
     {
         while($fila = mysqli_fetch_array($datos))
         {
-            echo '<li><a href="category.php?f=">'. $fila["marca_vehiculo"] .'<span>'.random_int(40,120).'</span></a></li>';
+            echo '<li><a href="category.php?f='. $fila["Id"] .'">'. $fila["marca_vehiculo"] .'<span>'.random_int(40,120).'</span></a></li>';
         }
     }
 
@@ -75,7 +67,7 @@ function ListarMarcasEndPage()
 						<div class="category-block" >
 							<div class="header">
 								<i class="fa fa-car icon-bg-'.random_int(1,8).'"></i> 
-                                <a href="category.php">
+                                <a href="category.php?f='.$fila["Id"].'">
 								<h4>'. $fila["marca_vehiculo"] . '</h4>
                                 </a>
 							</div>
@@ -89,10 +81,10 @@ function ListarMarcasEndPage()
 
 }
 
-function ListarBuskia()
+/*function ListarMarcasVehicluloCategoria($Id_marca)
 {
 
-    $datos = BusKiaModel();   
+    $datos = ListarMarcasVehicluloCategoriaModel($Id_marca);   
 
     if($datos -> num_rows > 0)
     {
@@ -104,66 +96,6 @@ function ListarBuskia()
 
 }
 
-
-function ListarBusSuzuki()
-{
-
-    $datos = BusSuzukiModel();   
-
-    if($datos -> num_rows > 0)
-    {
-        while($fila = mysqli_fetch_array($datos))
-        {
-            echo '<li><a href="category.html">'. $fila["Suzuki"] .'<span>'.random_int(40,120).'</span></a></li>';
-        }
-    }
-
-}
-
-
-function ListarBusToyota()
-{
-
-    $datos = BusToyotaModel();   
-
-    if($datos -> num_rows > 0)
-    {
-        while($fila = mysqli_fetch_array($datos))
-        {
-            echo '<li><a href="category.html">'. $fila["Toyota"] .'<span>'.random_int(40,120).'</span></a></li>';
-        }
-    }
-
-}
-
-function ListarBusVolskwagen()
-{
-
-    $datos = BusVolskwagenModel();   
-
-    if($datos -> num_rows > 0)
-    {
-        while($fila = mysqli_fetch_array($datos))
-        {
-            echo '<li><a href="category.html">'. $fila["Volskwagen"] .'<span>'.random_int(40,120).'</span></a></li>';
-        }
-    }
-
-}
-
-function ListarBusNissan()
-{
-
-    $datos =  BusNissanModel();   
-
-    if($datos -> num_rows > 0)
-    {
-        while($fila = mysqli_fetch_array($datos))
-        {
-            echo '<li><a href="category.html">'. $fila["Nissan"] .'<span>'.random_int(40,120).'</span></a></li>';
-        }
-    }
-
-}
+*/
 
 ?>
