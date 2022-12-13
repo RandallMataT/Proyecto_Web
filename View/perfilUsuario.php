@@ -59,7 +59,20 @@ navbar();
 						<label for="">Telefono</label>
 						<h5 class="text-center"> <?php echo $datos["telefono"]; ?> </h5>
 						
-						<a href="editarUsuario.php?q=<?php echo $_SESSION["SesionId"]?>" class="btn btn-main-sm">Editar Perfil</a>
+						<?php
+						
+						if($datos["Id"] == $_SESSION["SesionId"]){
+
+							echo '<a href="editarUsuario.php?q='. $datos["Id"] .'" class="btn btn-main-sm">Editar Perfil</a>';
+						}else{
+
+							echo '<a style="pointer-events: none" href="editarUsuario.php?q=' . $datos["Id"] . '" class="btn btn-main-sm">Editar Perfil</a>';
+
+						}
+						
+						?>
+
+						
 					</div>
 					<!-- Dashboard Links -->
 					<div class="widget user-dashboard-menu">

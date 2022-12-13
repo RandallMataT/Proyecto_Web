@@ -67,38 +67,54 @@ echo '<div class="container">
           </li>
           <li class="nav-item">
             <a class="nav-link" href="home.php">Inicio</a>
+          </li>';
+
+if ($_SESSION["sesionRoles"] == 1 ) {
+
+          
+  echo '
+        
+            <li class="nav-item dropdown dropdown-slide">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              administracion <span><i class="fa fa-angle-down"></i></span>
+              </a>
+              <!-- Dropdown list -->
+                <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="editarVehiculo.php">Editar Vehiculo</a>
+                <a class="dropdown-item" href="gestionVehiculo.php">Gestión de vehiculos</a>
+                <a class="dropdown-item" href="vehiculo.php">Vehiculo Destacado</a>
+                <a class="dropdown-item" href="gestionUsuario.php">Gestión de Usuarios</a>
+                <a class="dropdown-item" href="agregarVehiculo.php">Agregar Vehiculo</a>
+              </div>
           </li>
-          <li class="nav-item dropdown dropdown-slide">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Paginas <span><i class="fa fa-angle-down"></i></span>
-            </a>
-            <!-- Dropdown list -->
-            <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="editarVehiculo.php">Editar Vehiculo</a>
-            <a class="dropdown-item" href="gestionVehiculo.php">Gestión de vehiculos</a>
-            <a class="dropdown-item" href="vehiculo.php">Vehiculo Destacado</a>
-            <a class="dropdown-item" href="editarUsuario.php">Editar Usuario</a>
-            <a class="dropdown-item" href="agregarVehiculo.php">Agregar Vehiculo</a>
-            <a class="dropdown-item" href="comentarios.php">Comentarios de la Pagina</a>
-            </div>
+        </ul>';
+} else {
+ 
+  echo '<li class="nav-item dropdown dropdown-slide">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Perfil <span><i class="fa fa-angle-down"></i></span>
+              </a>
+              <!-- Dropdown list -->
+                <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="perfilUsuario.php?q='. $_SESSION["SesionId"] .'">Perfil</a>
+              </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="category.php">Categorias</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto mt-10">
-          <li class="nav-item">
-          <form action="" method="post">
-            <input class="btn btn-dark" type="submit" id="btnCerrar" name="btnCerrar" value="Cerrar Sesion"></input>
-            </form>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+        </ul>';
+
+}
+
+echo '<ul class="navbar-nav ml-auto mt-10">
+<li class="nav-item">
+<form action="" method="post">
+  <input class="btn btn-dark" type="submit" id="btnCerrar" name="btnCerrar" value="Cerrar Sesion"></input>
+  </form>
+</li>
+</ul>
+</div>
+</nav>
+</div>
 </div>
 </div>';
-
 
 }
 
@@ -192,6 +208,3 @@ function javascripts()
 
 
 }
-
-
-?>

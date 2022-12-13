@@ -7,6 +7,9 @@ if (session_status() == PHP_SESSION_NONE)
 
 
 include_once __DIR__ . '\generales.php';
+include_once __DIR__ . '\..\Controller\VehiculosController.php';
+
+$datos = ConsultarDatosVehiculo($_GET["v"]);
 
 ?>
 
@@ -41,39 +44,20 @@ navbar();
 			<!-- Left sidebar -->
 			<div class="col-md-8">
 				<div class="product-details">
-					<h1 class="product-title">Hp Dual Core 2gb Ram-Slim Laptop Available In Very Low Price</h1>
+					<h1 class="product-title"><?php echo $datos["marca_vehiculo"] .' '.  $datos["nombre_vehiculo"] ; ?></h1>
 					<div class="product-meta">
 						<ul class="list-inline">
-							<li class="list-inline-item"><i class="fa fa-user-o"></i> Por <a href="">Andrew</a></li>
-							<li class="list-inline-item"><i class="fa fa-folder-open-o"></i> Categoria<a href="">Electronics</a></li>
-							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Ubicacion<a href="">Dhaka Bangladesh</a></li>
+							<li class="list-inline-item"><i class="fa fa-user-o"></i> Por <a href="perfilUsuario.php?q=<?php echo $datos["Id_usuario"]; ?>"><?php echo $datos["nombre"]; ?></a></li>
+							<li class="list-inline-item"><i class="fa fa-car"></i> Tipo de vehiculo<a href=""><?php echo $datos["tipo_vehiculo"]; ?></a></li>
+							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Ubicacion<a href=""><?php echo $datos["Direccion"]; ?></a></li>
 						</ul>
 					</div>
 					<div id="carouselExampleIndicators" class="product-slider carousel slide" data-ride="carousel">
-						<ol class="carousel-indicators">
-							<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-							<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-							<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-						</ol>
-						<div class="carousel-inner">
-							<div class="carousel-item active">
-								<img class="d-block w-100" src="../images/products/products-1.jpg" alt="First slide">
-							</div>
-							<div class="carousel-item">
-								<img class="d-block w-100" src="../images/products/products-2.jpg" alt="Second slide">
-							</div>
-							<div class="carousel-item">
-								<img class="d-block w-100" src="../images/products/products-3.jpg" alt="Third slide">
-							</div>
-						</div>
-						<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="sr-only">Previous</span>
-						</a>
-						<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="sr-only">Next</span>
-						</a>
+						
+
+					<img src="data:image/jpg;base64,<?php echo base64_encode($datos["imagen"])?>" width="700" height="500" alt="Card image cap">
+
+					
 					</div>
 					<div class="content">
 						<ul class="nav nav-pills  justify-content-center" id="pills-tab" role="tablist">
@@ -90,12 +74,18 @@ navbar();
 				<div class="sidebar">
 					<div class="widget price text-center">
 						<h4>Precio</h4>
-						<p>$15000</p>
+						<p>₡ <?php echo $datos["Precio"]; ?></p>
 					</div>
 					<!-- User Profile widget -->
 					<div class="widget user">
-						<h4><a href="">Jonathon Andrew</a></h4>
-						<a href="">Ver Los Vehiculos</a>
+					<label for="">Nombre</label>
+						<h4><a href="perfilUsuario.php?q=<?php echo $datos["Id_usuario"]; ?>">publicado por <?php echo $datos["nombre"] .' '.  $datos["apellido"]; ?></a></h4>
+						<br>
+						<label for="">Correo</label>
+						<h5 class="text-center"> <?php echo $datos["correo"]; ?> </h5>
+						<label for="">Telefono</label>
+						<h5 class="text-center"> <?php echo $datos["telefono"]; ?> </h5>
+						
 					</div>
 				</div>
 			</div>

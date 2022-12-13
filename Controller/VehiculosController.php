@@ -28,7 +28,7 @@ function ListarVehiculo()
                             </a>
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title"><a href="">' . $fila["marca_vehiculo"]. ' ' . $fila["nombre_vehiculo"].'</a></h4>
+                            <h4 class="card-title"><a href="vehiculo.php?v='.$fila["Id"].'">' . $fila["marca_vehiculo"]. ' ' . $fila["nombre_vehiculo"].'</a></h4>
                             <ul class="list-inline product-meta">
                                 <li class="list-inline-item">
                                     <a href=""><i class="fa fa-car"></i>'.$fila["tipo_vehiculo"].'</a>
@@ -75,7 +75,7 @@ function ListarVehiculoCategoria()
                             </a>
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title"><a href="">' . $fila["marca_vehiculo"]. ' ' . $fila["nombre_vehiculo"].'</a></h4>
+                            <h4 class="card-title"><a href="vehiculo.php?v='.$fila["Id"].'">' . $fila["marca_vehiculo"]. ' ' . $fila["nombre_vehiculo"].'</a></h4>
                             <ul class="list-inline product-meta">
                                 <li class="list-inline-item">
                                     <a href=""><i class="fa fa-car"></i>'.$fila["tipo_vehiculo"].'</a>
@@ -178,6 +178,12 @@ function GestionVehiculosT()
             <a href=">" class="text-danger" onClick=""><i class="fa fa-fw fa-trash"></i>Delete</a></td>';
         }
     }
+}
+
+function ConsultarDatosVehiculo($Id)
+{
+    $datos = ConsultarDatosVehiculoModel($Id);   
+    return mysqli_fetch_array($datos);
 }
 
 ?>

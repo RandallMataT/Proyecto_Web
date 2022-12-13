@@ -24,4 +24,15 @@ function GestionVehiculoModel()
     return $datos;
 } 
 
+function ConsultarDatosVehiculoModel($Id)
+{
+    $enlace = OpenDB();
+
+    $procedimiento = "call ConsultarVehiculoId($Id);";
+    $datos = $enlace -> query($procedimiento);
+
+    CloseDB($enlace);
+    return $datos;
+}
+
 ?>

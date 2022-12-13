@@ -76,5 +76,25 @@ if (isset($_POST["actualizarUsuario"]))
 
 }
 
+function ListarUsuarios()
+{
+    $datos = ListarUsuarioModel();   
+
+    if($datos -> num_rows > 0)
+    {
+        while($fila = mysqli_fetch_array($datos))
+        {
+            echo '<tr>';
+            echo '<td>' . $fila["Id"] . '</td> ';
+            echo '<td>' . $fila["nombre"] . '</td>';
+            echo '<td>' . $fila["apellido"] . '</td>';
+            echo '<td>' . $fila["correo"] . '</td>';
+            echo '<td>' . $fila["telefono"] . '</td>';
+            echo '<td>' . $fila["tipo_usuario"] . '</td>';
+            echo '<td> <a href="editarUsuario.php?q='. $fila["Id"] .'" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edit</a>  <br/><br/>
+            <a href=">" class="text-danger" onClick=""><i class="fa fa-fw fa-trash"></i>Delete</a></td>';
+        }
+    }
+}
 
 ?>

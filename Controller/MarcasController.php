@@ -12,7 +12,7 @@ function ListarMarcas()
         while($fila = mysqli_fetch_array($datos))
         {
             echo '<li class="list-inline-item">';
-            echo '<a href=""><i class="fa fa-car" id="Bus'.$fila["marca_vehiculo"].'"></i>' . $fila["marca_vehiculo"] . '</a>';
+            echo '<a href="category.php?f='. $fila["Id"] .'"><i class="fa fa-car" id="Bus'.$fila["marca_vehiculo"].'"></i>' . $fila["marca_vehiculo"] . '</a>';
             echo '</li>';
 
         }

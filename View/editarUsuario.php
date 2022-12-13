@@ -52,7 +52,7 @@ navbar();
 							<img src="../images/user/default-user.png" alt="" class="rounded-circle">
 						</div>
 						<!-- User Name -->
-						<h5 class="text-center"> <?php echo $_SESSION["sesionNombre"]?> </h5>
+						<h5 class="text-center"> <?php echo $datos["nombre"]?> </h5>
 					</div>
 					<!-- Dashboard Links -->
 					<div class="widget user-dashboard-menu">
