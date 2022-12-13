@@ -72,68 +72,23 @@ navbar();
 						
 						?>
 
-						
 					</div>
 					<!-- Dashboard Links -->
-					<div class="widget user-dashboard-menu">
+					
+				</div>
+			</div>
+		
+			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+				<!-- Recently Favorited -->
+				<div class="widget user-dashboard-menu">
 						<ul>
 							<li class="active" ><a href=""><i class="fa fa-user"></i> Mis Vehiculos</a></li>
 						</ul>
 					</div>
-				</div>
-			</div>
-			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
-				<!-- Recently Favorited -->
-				<div class="widget dashboard-container my-adslist">
-					<h3 class="widget-header">Mis Vehiculos</h3>
-					<table class="table table-responsive product-dashboard-table">
-						<thead>
-							<tr>
-								<th>Imagen</th>
-								<th>Titulo Del Vehiculo</th>
-								<th class="text-center">Categoria</th>
-								<th class="text-center">Accion</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								
-								<td class="product-thumb">
-									<img width="80px" height="auto" src="../images/products/products-1.jpg" alt="image description"></td>
-								<td class="product-details">
-									<h3 class="title">Macbook Pro 15inch</h3>
-									<span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
-									<span><strong>Posted on: </strong><time>Jun 27, 2017</time> </span>
-									<span class="status active"><strong>Status</strong>Active</span>
-									<span class="location"><strong>Location</strong>Dhaka,Bangladesh</span>
-								</td>
-								<td class="product-category"><span class="categories">Laptops</span></td>
-								<td class="action" data-title="Action">
-									<div class="">
-										<ul class="list-inline justify-content-center">
-											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="view" href="vehiculo.php">
-													<i class="fa fa-eye"></i>
-												</a>		
-											</li>
-											<li class="list-inline-item">
-												<a class="edit" href="editarVehiculo.php">
-													<i class="fa fa-pencil"></i>
-												</a>		
-											</li>
-											<li class="list-inline-item">
-												<a class="delete" href="">
-													<i class="fa fa-trash"></i>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					
-				</div>
+				<?php
+                    ConsultarCarroUsuario($datos["Id"]);
+				?>
+				
 			</div>
 		</div>
 		<!-- Row End -->

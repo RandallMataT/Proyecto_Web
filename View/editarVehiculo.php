@@ -11,6 +11,10 @@ include_once __DIR__ . '\..\Controller\MarcasController.php';
 include_once __DIR__ . '\..\Controller\VehiculosController.php';
 include_once __DIR__ . '\..\Controller\ModeloController.php';
 include_once __DIR__ . '\..\Controller\UsuarioController.php';
+if($_GET["f"] == null)
+    header("Location: gestionVehiculo.php"); 
+
+$datos =  ConsultarCarrosIdUsuario($_GET["f"]);
 ?>
 
 <!DOCTYPE html>
@@ -55,6 +59,8 @@ include_once __DIR__ . '\..\Controller\UsuarioController.php';
 	<!--==================================
 =            Blog Section            =
 ===================================-->
+<br/><br/>
+<input type="hidden" value="<?php echo $datos["Id"] ?>" id="txtId" name="txtId">
 	<section class="blog section">
 		<div class="container">
 			<div class="row">
@@ -63,6 +69,7 @@ include_once __DIR__ . '\..\Controller\UsuarioController.php';
 						<div class="card-header">
 							Vehiculo
 						</div>
+					
 						<div class="card-body">
 
 							<form>
@@ -70,13 +77,13 @@ include_once __DIR__ . '\..\Controller\UsuarioController.php';
 									<div class="form-group col-md-6">
 										<label for="inputState">id usuario</label>
 										<select id="inputState" class="form-control">
-										  <?php ListarUsuarioNombre($datos["nombre"]); ?>
+										  <?php ListarUsuarioNombre($datos["Id_usuario"]); ?>
 										</select>
 									</div>
 									<div class="form-group col-md-6">
 										<label for="inputState">marca</label>
-										<select id="inputState" class="form-control">
-										<?php ListarMarcasAgregar($datos["marca_vehiculo"]); ?>
+										<select id="txtMarca" name="txtMarca"class="form-control">
+										<?php ListarMarcasAgregar($datos["Id_marca"]); ?>
 										</select>
 									</div>
 								</div>
@@ -85,13 +92,13 @@ include_once __DIR__ . '\..\Controller\UsuarioController.php';
 									<div class="form-group col-md-6">
 										<label for="inputState">provincia</label>
 										<select id="inputState" class="form-control">
-										 <?php ListarProvincias($datos["Nombre_provincia"]); ?>
+										 <?php ListarProvincias($datos["Id_provincia"]); ?>
 										</select>
 									</div>
 									<div class="form-group col-md-6">
 										<label for="inputState">estado del vehiculo</label>
 										<select id="inputState" class="form-control">
-										<?php ListarEstadoVehiculo($datos["estado_vehiculo"]); ?>
+										<?php ListarEstadoVehiculo($datos["Id_estado"]); ?>
 										</select>
 									</div>
 								</div>
@@ -99,13 +106,13 @@ include_once __DIR__ . '\..\Controller\UsuarioController.php';
 									<div class="form-group col-md-6">
 										<label for="inputState">transmision</label>
 										<select id="inputState" class="form-control">
-										<?php ListarTransmisionVehiculo($datos["tipo_transmision"]); ?>
+										<?php ListarTransmisionVehiculo($datos["id_transmision"]); ?>
 										</select>
 									</div>
 									<div class="form-group col-md-6">
 										<label for="modelo">modelo</label>
 										<select id="modelo" class="form-control">
-										<?php ListarModeloVehiculo($datos["modelo_vehiculo"]); ?>
+										<?php ListarModeloVehiculo($datos["id_modelo"]); ?>
 										</select>
 									</div>
 								</div>
@@ -113,30 +120,34 @@ include_once __DIR__ . '\..\Controller\UsuarioController.php';
 									<div class="form-group col-md-6">
 										<label for="tipo">tipo</label>
 										<select id="tipo" class="form-control">
-										  <?php ListarTipoVehiculo($datos["tipo_vehiculo"]); ?>
+										  <?php ListarTipoVehiculo($datos["id_tipo"]); ?>
 										</select>
 									</div>
 									<div class="form-group col-md-6">
 										<label for="color">color</label>
-										<input type="text" class="form-control" placeholder="color">
+										<input type="text" class="form-control" placeholder="color"
+										value="<?php echo $datos["Color"] ?>">
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="form-group col-md-6">
 										<label for="motor">motor</label>
-										<input type="text" class="form-control" placeholder="motor">
+										<input type="text" class="form-control" placeholder="motor"
+										value="<?php echo $datos["Motor"] ?>">
 									</div>
 									<div class="form-group col-md-6">
 										<label for="precio">precio</label>
-										<input type="text" class="form-control" placeholder="precio">
+										<input type="text" class="form-control" placeholder="precio"
+										value="<?php echo $datos["Precio"] ?>">
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="direccion">direccion</label>
-									<textarea class="form-control" id="idDireccion" rows="1"></textarea>
+									<textarea class="form-control" id="idDireccion" rows="1" ><?php echo $datos["Direccion"] ?></textarea>
+									
 								</div>
 								<div class="form-group">
-									<label for="exampleFormControlFile1">Agregar imagen del vehiculo</label>
+									<label for="exampleFormControlFile1">Actualizar imagen del vehiculo</label>
 									<input type="file" class="form-control-file" id="idImagen">
 								</div>
 

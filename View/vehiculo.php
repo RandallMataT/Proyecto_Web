@@ -10,7 +10,6 @@ include_once __DIR__ . '\generales.php';
 include_once __DIR__ . '\..\Controller\VehiculosController.php';
 
 $datos = ConsultarDatosVehiculo($_GET["v"]);
-
 ?>
 
 <!DOCTYPE html>
@@ -43,21 +42,18 @@ navbar();
 		<div class="row">
 			<!-- Left sidebar -->
 			<div class="col-md-8">
+			<input type="hidden" value="<?php echo $datos["Id"] ?>" id="txtId" name="txtId">
 				<div class="product-details">
-					<h1 class="product-title"><?php echo $datos["marca_vehiculo"] .' '.  $datos["nombre_vehiculo"] ; ?></h1>
+				<h1 class="product-title"><?php echo $datos["marca_vehiculo"] .' '.  $datos["nombre_vehiculo"] ; ?></h1>
 					<div class="product-meta">
 						<ul class="list-inline">
-							<li class="list-inline-item"><i class="fa fa-user-o"></i> Por <a href="perfilUsuario.php?q=<?php echo $datos["Id_usuario"]; ?>"><?php echo $datos["nombre"]; ?></a></li>
+						<li class="list-inline-item"><i class="fa fa-user-o"></i> Por <a href="perfilUsuario.php?q=<?php echo $datos["Id_usuario"]; ?>"><?php echo $datos["nombre"]; ?></a></li>
 							<li class="list-inline-item"><i class="fa fa-car"></i> Tipo de vehiculo<a href=""><?php echo $datos["tipo_vehiculo"]; ?></a></li>
 							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Ubicacion<a href=""><?php echo $datos["Direccion"]; ?></a></li>
 						</ul>
 					</div>
 					<div id="carouselExampleIndicators" class="product-slider carousel slide" data-ride="carousel">
-						
-
 					<img src="data:image/jpg;base64,<?php echo base64_encode($datos["imagen"])?>" width="700" height="500" alt="Card image cap">
-
-					
 					</div>
 					<div class="content">
 						<ul class="nav nav-pills  justify-content-center" id="pills-tab" role="tablist">
@@ -85,7 +81,6 @@ navbar();
 						<h5 class="text-center"> <?php echo $datos["correo"]; ?> </h5>
 						<label for="">Telefono</label>
 						<h5 class="text-center"> <?php echo $datos["telefono"]; ?> </h5>
-						
 					</div>
 				</div>
 			</div>

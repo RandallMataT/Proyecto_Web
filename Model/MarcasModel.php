@@ -15,6 +15,18 @@ function ListarMarcasModel()
 
 
 
+function BusKiaModel()
+{
+    $enlace = OpenDB();
+
+    $procedimiento = "call BusKia();";
+    $datos = $enlace -> query($procedimiento);
+
+    CloseDB($enlace);
+    return $datos;
+}
+
+
 
 
 ?>

@@ -23,12 +23,12 @@ function ListarVehiculo()
                     <div class="card">
                         <div class="thumb-content">
                             <!-- <div class="price">$200</div> -->
-                            <a href="">
+                            <a href="vehiculo.php?v='.$fila["Id"].'">
                                 <img src="data:image/jpg;base64,'. base64_encode($fila['imagen']) .'" width="350" height="270" alt="Card image cap">
                             </a>
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title"><a href="vehiculo.php?v='.$fila["Id"].'">' . $fila["marca_vehiculo"]. ' ' . $fila["nombre_vehiculo"].'</a></h4>
+                        <h4 class="card-title"><a href="vehiculo.php?v='.$fila["Id"].'">' . $fila["marca_vehiculo"]. ' ' . $fila["nombre_vehiculo"].'</a></h4>
                             <ul class="list-inline product-meta">
                                 <li class="list-inline-item">
                                     <a href=""><i class="fa fa-car"></i>'.$fila["tipo_vehiculo"].'</a>
@@ -75,7 +75,7 @@ function ListarVehiculoCategoria()
                             </a>
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title"><a href="vehiculo.php?v='.$fila["Id"].'">' . $fila["marca_vehiculo"]. ' ' . $fila["nombre_vehiculo"].'</a></h4>
+                        <h4 class="card-title"><a href="vehiculo.php?v='.$fila["Id"].'">' . $fila["marca_vehiculo"]. ' ' . $fila["nombre_vehiculo"].'</a></h4>
                             <ul class="list-inline product-meta">
                                 <li class="list-inline-item">
                                     <a href=""><i class="fa fa-car"></i>'.$fila["tipo_vehiculo"].'</a>
@@ -104,7 +104,7 @@ function ListarVehiculoCategoria()
 
 
 
-function ListarTipoVehiculo($datos)
+function ListarTipoVehiculo($tipo)
 {
     $datos = ListarTipoVehiculoModel();   
 
@@ -113,13 +113,16 @@ function ListarTipoVehiculo($datos)
         echo '<option selected value=""> Seleccione </option>';
         while($fila = mysqli_fetch_array($datos))
         {
-            echo '<option value="' . $fila["Id"] . '">' . $fila["tipo_vehiculo"] . '</option>';
+            if($tipo == $fila["id"])
+            echo '<option selected value="' . $fila["id"] . '">' . $fila["tipo_vehiculo"] . '</option>';
+            else
+            echo '<option value="' . $fila["id"] . '">' . $fila["tipo_vehiculo"] . '</option>';
 
         }
     }
 }
 
-function ListarEstadoVehiculo($datos)
+function ListarEstadoVehiculo($tipo)
 {
     $datos = ListarEstadoVehiculoModel();   
 
@@ -128,13 +131,16 @@ function ListarEstadoVehiculo($datos)
         echo '<option selected value=""> Seleccione </option>';
         while($fila = mysqli_fetch_array($datos))
         {
+            if($tipo == $fila["Id"])
+            echo '<option selected value="' . $fila["Id"] . '">' . $fila["estado_vehiculo"] . '</option>';
+            else
             echo '<option value="' . $fila["Id"] . '">' . $fila["estado_vehiculo"] . '</option>';
 
         }
     }
 }
 
-function ListarTransmisionVehiculo($datos)
+function ListarTransmisionVehiculo($tipo)
 {
     $datos = ListarTransmisionVehiculoModel();   
 
@@ -143,11 +149,14 @@ function ListarTransmisionVehiculo($datos)
         echo '<option selected value=""> Seleccione </option>';
         while($fila = mysqli_fetch_array($datos))
         {
-            echo '<option value="' . $fila["Id"] . '">' . $fila["tipo_transmision"] . '</option>';
-
+            if($tipo == $fila["id"])
+            echo '<option selected value="' . $fila["id"] . '">' . $fila["tipo_transmision"] . '</option>';
+            else
+            echo '<option value="' . $fila["id"] . '">' . $fila["tipo_transmision"] . '</option>';
         }
     }
 }
+
 
 function GestionVehiculosT()
 {
@@ -174,10 +183,16 @@ function GestionVehiculosT()
             height="150" width="250"> </td>'; 
             //echo'<td> <a href="" class="edit" data-toggle="modal" ><i class="material-icons" data-toggle="tooltip" title="Edit" >&#xE254;</i></a>
             //<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a></td>';
-            echo '<td> <a href=" >" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edit</a>  <br/><br/>
+            echo '<td> <a href="editarVehiculo.php?f='.$fila["Id"].'" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edit</a>  <br/><br/>
             <a href=">" class="text-danger" onClick=""><i class="fa fa-fw fa-trash"></i>Delete</a></td>';
         }
     }
+}
+
+function ConsultarCarrosIdUsuario($id)
+{
+    $datos = ConsultarCarroIdModel($id);   
+    return mysqli_fetch_array($datos);
 }
 
 function ConsultarDatosVehiculo($Id)
@@ -185,5 +200,4 @@ function ConsultarDatosVehiculo($Id)
     $datos = ConsultarDatosVehiculoModel($Id);   
     return mysqli_fetch_array($datos);
 }
-
 ?>

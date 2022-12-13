@@ -3,7 +3,7 @@
 include_once __DIR__ . '\..\Model\ModeloVehiculoModel.php';
 
 
-function ListarModeloVehiculo($datos)
+function ListarModeloVehiculo($tipo)
 {
     $datos = ListarModeloVehiculoModel();   
 
@@ -12,8 +12,10 @@ function ListarModeloVehiculo($datos)
         echo '<option selected value=""> Seleccione </option>';
         while($fila = mysqli_fetch_array($datos))
         {
-            echo '<option value="' . $fila["Id"] . '">' . $fila["modelo_vehiculo"] . '</option>';
-            
+            if($tipo == $fila["id"])
+            echo '<option selected value="' . $fila["id"] . '">' . $fila["modelo_vehiculo"] . '</option>';
+            else
+            echo '<option value="' . $fila["id"] . '">' . $fila["modelo_vehiculo"] . '</option>';
         }
     }
 

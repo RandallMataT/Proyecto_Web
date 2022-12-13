@@ -68,13 +68,10 @@ echo '<div class="container">
           <li class="nav-item">
             <a class="nav-link" href="home.php">Inicio</a>
           </li>';
+          if ($_SESSION["sesionRoles"] == 1 ) {
 
-if ($_SESSION["sesionRoles"] == 1 ) {
-
-          
-  echo '
-        
-            <li class="nav-item dropdown dropdown-slide">
+          echo'
+              <li class="nav-item dropdown dropdown-slide">
               <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               administracion <span><i class="fa fa-angle-down"></i></span>
               </a>
@@ -87,10 +84,9 @@ if ($_SESSION["sesionRoles"] == 1 ) {
                 <a class="dropdown-item" href="agregarVehiculo.php">Agregar Vehiculo</a>
               </div>
           </li>
-        </ul>';
-} else {
- 
-  echo '<li class="nav-item dropdown dropdown-slide">
+          </ul>';
+        } else {
+          echo '<li class="nav-item dropdown dropdown-slide">
               <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Perfil <span><i class="fa fa-angle-down"></i></span>
               </a>
@@ -99,11 +95,12 @@ if ($_SESSION["sesionRoles"] == 1 ) {
                 <a class="dropdown-item" href="perfilUsuario.php?q='. $_SESSION["SesionId"] .'">Perfil</a>
               </div>
           </li>
-        </ul>';
+          </ul>';
 
-}
+        }
 
-echo '<ul class="navbar-nav ml-auto mt-10">
+
+       echo '<ul class="navbar-nav ml-auto mt-10">
 <li class="nav-item">
 <form action="" method="post">
   <input class="btn btn-dark" type="submit" id="btnCerrar" name="btnCerrar" value="Cerrar Sesion"></input>
@@ -115,6 +112,7 @@ echo '<ul class="navbar-nav ml-auto mt-10">
 </div>
 </div>
 </div>';
+
 
 }
 
@@ -208,3 +206,6 @@ function javascripts()
 
 
 }
+
+
+?>

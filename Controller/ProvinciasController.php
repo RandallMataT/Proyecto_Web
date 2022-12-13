@@ -10,13 +10,13 @@ function ListarProvinciasCategoria()
     {
         while($fila = mysqli_fetch_array($datos))
         {
-            echo '<li><a href="category.php?p='. $fila["Id"] .'">'. $fila["Nombre_provincia"] .'<span>'.random_int(40,120).'</span></a></li>';
+            echo '<li><a href="category.php?p='. $fila["Id"] .'">'. $fila["Nombre_provincia"] .'<span>'.random_int(40,120).'</span></a></li>'; 
         }
     }
 
 }
 
-function ListarProvincias($datos)
+function ListarProvincias($tipo)
 {
     $datos = ListarProvinciasModel();   
 
@@ -25,7 +25,10 @@ function ListarProvincias($datos)
         echo '<option selected value=""> Seleccione </option>';
         while($fila = mysqli_fetch_array($datos))
         {
-            echo '<li><a href="category.php?p='. $fila["Id"] .'">'. $fila["Nombre_provincia"] .'<span>'.random_int(40,120).'</span></a></li>';
+            if($tipo == $fila["Id"])
+            echo '<option selected value="' . $fila["Id"] . '">' . $fila["Nombre_provincia"] . '</option>';
+            else
+            echo '<option value="' . $fila["Id"] . '">' . $fila["Nombre_provincia"] . '</option>';
             
         }
     }

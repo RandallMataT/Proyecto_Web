@@ -60,7 +60,7 @@ include_once __DIR__ . '\..\Controller\UsuarioController.php';
 
       
     <table id="tablaVehiculos" class="table table-bordered table-hover">
-    <caption>Lista de Vehiculos</caption>
+    <caption>Lista de Usuarios</caption>
         <thead class="thead-dark"> 
             <tr>
                 <th>Id</th>

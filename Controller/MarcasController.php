@@ -81,10 +81,10 @@ function ListarMarcasEndPage()
 
 }
 
-/*function ListarMarcasVehicluloCategoria($Id_marca)
+function ListarBuskia()
 {
 
-    $datos = ListarMarcasVehicluloCategoriaModel($Id_marca);   
+    $datos = BusKiaModel();   
 
     if($datos -> num_rows > 0)
     {
@@ -96,6 +96,6 @@ function ListarMarcasEndPage()
 
 }
 
-*/
+
 
 ?>
