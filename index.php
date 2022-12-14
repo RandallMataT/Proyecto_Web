@@ -26,17 +26,17 @@ include_once __DIR__ . '\Controller\UsuarioController.php';
     <div class="main">
       <div class="container a-container" id="a-container">
 
-        <form class="form" id="a-form" method="post" action="">
+
+        <form class="form" id="a-form" method="POST" action="">
 
           <h2 class="form_title title">Crear Cuenta</h2>
           <div class="form__icons"></div>
           <span class="form__span">Utilice su correo electronico</span>
-          <input class="form__input" type="text" placeholder="Nombre" />
-          <input class="form__input" type="text" placeholder="Apellido" />
-          <input class="form__input" type="text" placeholder="Correo" />
-          <input class="form__input" type="password" placeholder="Contraseña" />
-          <button class="form__button button submit">Registrarse</button>
-
+          <input class="form__input" type="text" name="nombre" placeholder="Nombre" required />
+          <input class="form__input" type="text" name="apellido" placeholder="Apellido" required/>
+          <input class="form__input" type="text" name="correo" placeholder="Correo" required/>
+          <input class="form__input" type="password" name="contrasenna" placeholder="Contraseña" required/>
+          <input type="submit" id="btnRegistrarse" name="btnRegistrarse" value="Registrarse" class="form__button button">
         </form>
 
       </div>
