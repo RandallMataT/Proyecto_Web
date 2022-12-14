@@ -60,7 +60,6 @@ $datos =  ConsultarCarrosIdUsuario($_GET["f"]);
 =            Blog Section            =
 ===================================-->
 <br/><br/>
-<input type="hidden" value="<?php echo $datos["Id"] ?>" id="txtId" name="txtId">
 	<section class="blog section">
 		<div class="container">
 			<div class="row">
@@ -72,17 +71,18 @@ $datos =  ConsultarCarrosIdUsuario($_GET["f"]);
 					
 						<div class="card-body">
 
-							<form>
+							<form action="" method="POST">
+							 <input type="hidden" value="<?php echo $datos["Id"] ?>" id="txtId" name="txtId" >
 								<div class="form-row">
 									<div class="form-group col-md-6">
-										<label for="inputState">id usuario</label>
-										<select id="inputState" class="form-control">
+										<label for="idUsuario">Usuario</label>
+										<select class="form-control" id="idUsuario" name="idUsuario" required>
 										  <?php ListarUsuarioNombre($datos["Id_usuario"]); ?>
 										</select>
 									</div>
 									<div class="form-group col-md-6">
-										<label for="inputState">marca</label>
-										<select id="txtMarca" name="txtMarca"class="form-control">
+										<label for="idMarca">Marca</label>
+										<select class="form-control" id="idMarca" name="idMarca" required>
 										<?php ListarMarcasAgregar($datos["Id_marca"]); ?>
 										</select>
 									</div>
@@ -90,68 +90,76 @@ $datos =  ConsultarCarrosIdUsuario($_GET["f"]);
 
 								<div class="form-row">
 									<div class="form-group col-md-6">
-										<label for="inputState">provincia</label>
-										<select id="inputState" class="form-control">
+										<label for="idProvincia">Provincia</label>
+										<select class="form-control" id="idProvincia" name="idProvincia" required>
 										 <?php ListarProvincias($datos["Id_provincia"]); ?>
 										</select>
 									</div>
 									<div class="form-group col-md-6">
-										<label for="inputState">estado del vehiculo</label>
-										<select id="inputState" class="form-control">
+										<label for="idEstado">Estado del vehiculo</label>
+										<select class="form-control" id="idEstado" name="idEstado" required>
 										<?php ListarEstadoVehiculo($datos["Id_estado"]); ?>
 										</select>
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="form-group col-md-6">
-										<label for="inputState">transmision</label>
-										<select id="inputState" class="form-control">
+										<label for="idTransmision">Transmision</label>
+										<select  class="form-control" id="idTransmision" name="idTransmision" required>
 										<?php ListarTransmisionVehiculo($datos["id_transmision"]); ?>
 										</select>
 									</div>
 									<div class="form-group col-md-6">
-										<label for="modelo">modelo</label>
-										<select id="modelo" class="form-control">
+										<label for="idModelo">Modelo</label>
+										<select  class="form-control" id="idModelo" name="idModelo" required>
 										<?php ListarModeloVehiculo($datos["id_modelo"]); ?>
 										</select>
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="form-group col-md-6">
-										<label for="tipo">tipo</label>
-										<select id="tipo" class="form-control">
+										<label for="idTipo">Tipo</label>
+										<select  class="form-control" id="idTipo" name="idTipo" required>
 										  <?php ListarTipoVehiculo($datos["id_tipo"]); ?>
 										</select>
 									</div>
 									<div class="form-group col-md-6">
-										<label for="color">color</label>
-										<input type="text" class="form-control" placeholder="color"
-										value="<?php echo $datos["Color"] ?>">
+										<label for="idNombre">Nombre vehiculo</label>
+										<input type="text" class="form-control "id="idNombre" name ="idNombre" placeholder="Nombre vehiculo" required
+										value="<?php echo $datos["nombre_vehiculo"] ?>">
 									</div>
 								</div>
 								<div class="form-row">
+								    <div class="form-group col-md-6">
+										<label for="idColor">Color</label>
+										<input type="text" class="form-control" id="idColor" name="idColor" placeholder="Color" required
+										value="<?php echo $datos["Color"] ?>">
+									</div>
 									<div class="form-group col-md-6">
-										<label for="motor">motor</label>
-										<input type="text" class="form-control" placeholder="motor"
+										<label for="idMotor">Motor</label>
+										<input type="text" class="form-control" id="idMotor" name="idMotor" placeholder="Motor" required
 										value="<?php echo $datos["Motor"] ?>">
 									</div>
-									<div class="form-group col-md-6">
-										<label for="precio">precio</label>
-										<input type="text" class="form-control" placeholder="precio"
-										value="<?php echo $datos["Precio"] ?>">
-									</div>
 								</div>
-								<div class="form-group">
-									<label for="direccion">direccion</label>
-									<textarea class="form-control" id="idDireccion" rows="1" ><?php echo $datos["Direccion"] ?></textarea>
+								<div class="form-row">
+								    <div class="form-group col-md-6">
+										<label for="idPrecio">Precio</label>
+										<input type="text"  class="form-control" id="idPrecio" name="idPrecio" placeholder="Precio" required
+										value="<?php echo $datos["Precio"] ?>">
+								    </div>
+								    <div class="form-group col-md-6">
+									<label for="idDireccion">Direccion</label>
+									<textarea class="form-control" id="idDireccion" name="idDireccion" rows="1"  required><?php echo $datos["Direccion"] ?></textarea>
 									
+								     </div>
 								</div>
 								<div class="form-group">
 									<label for="exampleFormControlFile1">Actualizar imagen del vehiculo</label>
-									<input type="file" class="form-control-file" id="idImagen">
+									<input type="file" class="form-control-file" id="idImagen" name="idImagen">
 								</div>
 
-								<button type="submit" class="btn btn-primary">Guardar</button>
+								<button class="btn btn-primary" id="actualizarVehiculo" name="actualizarVehiculo">Guardar</button>
+								<a href="gestionVehiculo.php" class="btn btn-danger">Cancelar</a>
 							</form>
 
 						</div>

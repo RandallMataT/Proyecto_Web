@@ -31,8 +31,7 @@ navbar();
         <div class="row">
         <div class="col-md-12">
                 <div class="search-result bg-gray">
-                    <h2>Busca por categoria</h2>
-                    <h2>Resultados para </h2>
+                    <h2>Resultados por categoria</h2>
                 </div>
             </div>
         </div>

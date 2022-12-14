@@ -81,6 +81,7 @@ if (isset($_POST["actualizarUsuario"]))
 }
     function ConsultarCarroUsuario($Id)
 {
+  
     $datos = ConsultarCarroUsuarioModel($Id); 
     if($datos -> num_rows > 0)
     {
@@ -105,15 +106,16 @@ if (isset($_POST["actualizarUsuario"]))
                             <h3 class="title">'.$fila["nombre_vehiculo"].' </h3>
                             <span class="add-id"><strong>Codigo</strong>'.$fila["Id"].'</span>
                             <span><strong>Publicado: </strong><time>11/12/2022</time> </span>
-                            <span class="status active"><strong>Estado</strong>Active</span>
+                            <span class="status active"><strong>Estado</strong>activo</span>
                             <span class="location"><strong>Dirección</strong>'.$fila["Direccion"].'</span>
                         </td>
                         <td class="product-category"><span class="categories">'.$fila["marca_vehiculo"].'</span></td>
-                        <td class="action" data-title="Action">
-                            <div class="">
+                        <td class="action" data-title="Action">';
+                        if ($fila["id"]== 1 ) {
+                           echo' <div class="">
                                 <ul class="list-inline justify-content-center">
                                     <li class="list-inline-item">
-                                        <a data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="view" href="vehiculo.php">
+                                        <a data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="view" href="vehiculo.php?v='.$fila["Id"].'">
                                             <i class="fa fa-eye"></i>
                                         </a>		
                                     </li>
@@ -123,12 +125,24 @@ if (isset($_POST["actualizarUsuario"]))
                                         </a>		
                                     </li>
                                     <li class="list-inline-item">
-                                        <a class="delete" href="">
+                                        <a class="delete" href="" >
                                             <i class="fa fa-trash"></i>
                                         </a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div>';
+                        }else{
+                            echo '<div class="">
+                            <ul class="list-inline justify-content-center">
+                                <li class="list-inline-item">
+                                    <a data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="view" href="vehiculo.php?v='.$fila["Id"].'">
+                                        <i class="fa fa-eye"></i>
+                                    </a>		
+                                </li>
+                            </ul>
+                        </div>';
+                        }
+                        echo'
                         </td>
                     </tr>
                 </tbody>

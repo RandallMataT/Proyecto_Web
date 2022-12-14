@@ -16,7 +16,6 @@ include_once __DIR__ . '\..\Controller\ModeloController.php';
 <html lang="en">
 
 <head>
-
 	<?php
 
 	headerGeneral();
@@ -46,6 +45,7 @@ include_once __DIR__ . '\..\Controller\ModeloController.php';
 				<div class="col-md-8 offset-md-2 text-center">
 					<!-- Title text -->
 					<h3>Gestión Vehiculos</h3>
+                    
 				</div>
 			</div>
 		</div>
@@ -64,7 +64,7 @@ include_once __DIR__ . '\..\Controller\ModeloController.php';
     </div>
     
     <br/><br/><br/>
-      
+    
     <table id="tablaVehiculos" class="table table-bordered table-hover">
     <caption>Lista de Vehiculos</caption>
         <thead class="thead-dark"> 
@@ -122,19 +122,7 @@ footerCopyright();
 
 </footer>
 
-<?php
-
-javascripts();
-
-?>
-
-
-<script>
-$(document).ready(function () {
-    $('#tablaVehiculos').DataTable();
-});
-</script>
-
+ 
 
 
 </body>

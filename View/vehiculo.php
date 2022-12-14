@@ -8,6 +8,7 @@ if (session_status() == PHP_SESSION_NONE)
 
 include_once __DIR__ . '\generales.php';
 include_once __DIR__ . '\..\Controller\VehiculosController.php';
+include_once __DIR__ . '\..\Model\VehiculosModel.php';
 
 $datos = ConsultarDatosVehiculo($_GET["v"]);
 ?>
@@ -57,11 +58,19 @@ navbar();
 					</div>
 					<div class="content">
 						<ul class="nav nav-pills  justify-content-center" id="pills-tab" role="tablist">
-							<li class="nav-item">
-								<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">comprar</a>
 							
+						 <?php
+						if ($datos["Roles"] == 2) {
+							if($datos["Id_usuario"] != $datos["Id"]){
+							echo '<li class="nav-item">
+							     <div class="alert alert-success alert-dismissable"><a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" 
+								 role="tab" aria-controls="pills-home" aria-selected="true">Comprar</a></div>
+								</li>';
+							}
+						}
+
+						?>
 							
-							</li>
 						</ul>
 					</div>
 				</div>
@@ -97,6 +106,8 @@ navbar();
 
 <?php
 
+
+
 footerInfo();
 
 ?>
@@ -109,6 +120,7 @@ footerInfo();
 
 footerCopyright();
 
+
 ?>
 
 </footer>
@@ -116,6 +128,7 @@ footerCopyright();
 <?php
 
 javascripts();
+
 
 ?>
 

@@ -46,4 +46,52 @@ function ConsultarDatosVehiculoModel($Id)
     return $datos;
 }
 
+
+
+function EditarVehiculoModel($Id_usuario, $Id_marca, $Id_provincia, $Id_estado, $id_modelo,$id_transmision, $id_tipo, $nombre_vehiculo
+,$Color,$Motor,$Precio,$Direccion,$Id)
+{
+$enlace = OpenDB();
+$resultado = false;
+
+$procedimiento = "call EditarVehiculo($Id_usuario,$Id_marca,$Id_provincia,$Id_estado,
+$id_modelo,$id_transmision,$id_tipo,'$nombre_vehiculo','$Color','$Motor','$Precio','$Direccion',$Id);";
+
+if($enlace -> query($procedimiento))
+    $resultado = true; 
+
+CloseDB($enlace);
+return $resultado;
+
+}
+
+function AgregarVehiculoModal($Id_usuario, $Id_marca, $Id_provincia, $Id_estado, $id_modelo,$id_transmision, $id_tipo, $nombre_vehiculo
+,$Color,$Motor,$Precio,$Direccion, $imagen)
+{
+$enlace = OpenDB();
+$resultado = false;
+
+$procedimiento = "call AgregarVehiculo($Id_usuario,$Id_marca,$Id_provincia,$Id_estado,
+$id_modelo,$id_transmision,$id_tipo,'$nombre_vehiculo','$Color','$Motor','$Precio','$Direccion','$imagen' );";
+
+if($enlace -> query($procedimiento))
+    $resultado = true; 
+
+CloseDB($enlace);
+return $resultado;
+
+}
+
+function EliminarVehiculoModel($Id)
+{
+    $enlace = OpenDB();
+    $procedimiento = "call EliminarVehiculo($Id);";
+
+    $enlace -> query($procedimiento);
+
+    CloseDB($enlace);
+}
+
+
+
 ?>
