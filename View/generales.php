@@ -5,6 +5,7 @@ if (session_status() == PHP_SESSION_NONE)
 
 include_once __DIR__ . '\..\Controller\UsuarioController.php';
 include_once __DIR__ . '\..\Model\UsuarioModel.php';
+include_once __DIR__ . '\..\Model\RegistroModel.php';
 
 
 
