@@ -168,6 +168,7 @@ function GestionVehiculosT()
         while($fila = mysqli_fetch_array($datos))
         {
             echo '<tr>';
+            echo '<td>' . $fila["Id"] . '</td> ';
             echo '<td>' . $fila["nombre"] . '</td> ';
             echo '<td>' . $fila["marca_vehiculo"] . '</td>';
             echo '<td>' . $fila["Nombre_provincia"] . '</td>';
@@ -290,7 +291,7 @@ echo $statusMsg;
 
 if(isset($_POST["btnEliminar"]))
 {
-    $Id = $_POST["carId"];
+    $Id = $_GET["carId"];
     EliminarVehiculoModel($Id);  
 }
 

@@ -190,8 +190,7 @@ function ListarUsuarios()
             echo '<td>' . $fila["correo"] . '</td>';
             echo '<td>' . $fila["telefono"] . '</td>';
             echo '<td>' . $fila["tipo_usuario"] . '</td>';
-            echo '<td> <a href="editarUsuario.php?q='. $fila["Id"] .'" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edit</a>  <br/><br/>
-            <a href=">" class="text-danger" onClick=""><i class="fa fa-fw fa-trash"></i>Delete</a></td>';
+            echo '<td> <a href="editarUsuario.php?q='. $fila["Id"] .'" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edit</a>  <br/><br/>';
         }
     }
 }

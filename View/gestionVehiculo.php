@@ -69,6 +69,7 @@ include_once __DIR__ . '\..\Controller\ModeloController.php';
     <caption>Lista de Vehiculos</caption>
         <thead class="thead-dark"> 
             <tr>
+                <th>Id</th>
                 <th>Usuario</th>
                 <th>Marca</th>
                 <th>Provincia</th>
