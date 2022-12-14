@@ -6,6 +6,23 @@ if (session_status() == PHP_SESSION_NONE)
 include_once __DIR__ . '\..\Model\UsuarioModel.php';
 include_once __DIR__ . '\UtilitarioController.php';
 
+include_once __DIR__ . '\..\Model\RegistroModel.php';
+
+if(isset($_POST["btnRegistrarse"]))
+{
+    $Nombre =$_POST['nombre'];
+    $Apellido =$_POST['apellido'];
+    $Correo =$_POST['correo'];
+    $Contrasenna =$_POST['contrasenna'];
+
+        
+    $datos = RegistrarUsuarioModel($Nombre, $Apellido, $Correo, $Contrasenna);   
+  
+        
+    header("Location: \Proyecto_Web\index.php");
+    
+}
+
 if(isset($_POST["btnIniciarSesion"]))
 {
     $correo = $_POST["txtCorreo"];
