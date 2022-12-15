@@ -128,7 +128,7 @@ if (isset($_POST["actualizarUsuario"]))
                         </td>
                         <td class="product-category"><span class="categories">'.$fila["marca_vehiculo"].'</span></td>
                         <td class="action" data-title="Action">';
-                        if ($fila["id"]== 1 ) {
+                        if ($fila["id"]== $_SESSION["SesionId"] ) {
                            echo' <div class="">
                                 <ul class="list-inline justify-content-center">
                                     <li class="list-inline-item">
