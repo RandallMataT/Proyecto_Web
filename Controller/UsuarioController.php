@@ -43,7 +43,7 @@ if(isset($_POST["btnIniciarSesion"]))
     }
     else
     {
-        header("Location: ..\index.php");
+        header("Location: \Proyecto_Web\index.php");
     }
 }
 
