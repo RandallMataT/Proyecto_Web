@@ -12,11 +12,12 @@ if(isset($_POST["btnRegistrarse"]))
 {
     $Nombre =$_POST['nombre'];
     $Apellido =$_POST['apellido'];
+    $telefono =$_POST['telefono'];
     $Correo =$_POST['correo'];
     $Contrasenna =$_POST['contrasenna'];
 
         
-    $datos = RegistrarUsuarioModel($Nombre, $Apellido, $Correo, $Contrasenna);   
+    $datos = RegistrarUsuarioModel($Nombre, $Apellido,$telefono, $Correo, $Contrasenna,);   
   
         
     header("Location: \Proyecto_Web\index.php");

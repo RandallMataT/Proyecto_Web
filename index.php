@@ -34,7 +34,8 @@ include_once __DIR__ . '\Controller\UsuarioController.php';
           <span class="form__span">Utilice su correo electronico</span>
           <input class="form__input" type="text" name="nombre" placeholder="Nombre" required />
           <input class="form__input" type="text" name="apellido" placeholder="Apellido" required/>
-          <input class="form__input" type="text" name="correo" placeholder="Correo" required/>
+          <input class="form__input" type="text" name="telefono" placeholder="telefono" required/>
+          <input class="form__input" type="email" name="correo" placeholder="Correo" required/>
           <input class="form__input" type="password" name="contrasenna" placeholder="Contraseña" required/>
           <input type="submit" id="btnRegistrarse" name="btnRegistrarse" value="Registrarse" class="form__button button">
         </form>
