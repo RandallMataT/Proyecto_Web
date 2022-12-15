@@ -48,8 +48,8 @@ include_once __DIR__ . '\Controller\UsuarioController.php';
           <h2 class="form_title title">Iniciar Sesion</h2>
           <div class="form__icons"></div>
           <span class="form__span">Utilize su correo electronico</span>
-          <input class="form__input" type="text" placeholder="Correo" id="txtCorreo" name="txtCorreo"/>
-          <input class="form__input" type="password" placeholder="Contraseña" id="txtContrasenna" name="txtContrasenna" />
+          <input class="form__input" type="email" placeholder="Correo" id="txtCorreo" name="txtCorreo" required/>
+          <input class="form__input" type="password" placeholder="Contraseña" id="txtContrasenna" name="txtContrasenna" required />
 
           
           <input type="submit" id="btnIniciarSesion" name="btnIniciarSesion" value="iniciar sesion" class="form__button button">
