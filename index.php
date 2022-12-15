@@ -50,7 +50,7 @@ include_once __DIR__ . '\Controller\UsuarioController.php';
           <input class="form__input" type="text" placeholder="Correo" id="txtCorreo" name="txtCorreo"/>
           <input class="form__input" type="password" placeholder="Contraseña" id="txtContrasenna" name="txtContrasenna" />
 
-          <a class="form__link">Olvidaste la contraseña?</a>
+          
           <input type="submit" id="btnIniciarSesion" name="btnIniciarSesion" value="iniciar sesion" class="form__button button">
           
         </form>

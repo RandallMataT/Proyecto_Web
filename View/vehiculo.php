@@ -64,7 +64,7 @@ navbar();
 							if($datos["Id_usuario"] != $datos["Id"]){
 							echo '<li class="nav-item">
 							     <div class="alert alert-success alert-dismissable"><a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" 
-								 role="tab" aria-controls="pills-home" aria-selected="true">Comprar</a></div>
+								 </div>
 								</li>';
 							}
 						}
